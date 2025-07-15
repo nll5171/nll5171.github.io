@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="../css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Projects - HFTF Alessi Mode Hack</title>
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand noselect" href="../index.html">Nicholas Lang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-me">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#academic-projects">Academic Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#personal-projects">Personal Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../assets/Nick_Lang_CV.pdf">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="bd-content" role="main">
+        <div class="container text-light mt-md-4 mb-md-4 project-container">
+            <div class="row text-center heading project-header">
+                <div class="col py-3 px-2 px-md-5">
+                    <h1>Heritage for the Future: Alessi Mode</h1>
+                </div>
+            </div>
+            <div class="row text-section project-content">
+                <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/alessi-mode.png" class="d-block w-100 rounded-2 border"
+                                    alt="Alessi mode romhack gameplay">
+                            </div>
+                            <div class="carousel-item ratio" style="--bs-aspect-ratio: calc(7/12 * 100%);">
+                                <iframe src="https://www.youtube.com/embed/d2eEWN16CG4"
+                                    class="d-block w-100 rounded-2 border" title="Rainbow Edition Revision 2 Release"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pt-2">This was a romhack created in the summer of 2019 in order to replicate the Alessi
+                        mode present in the Dreamcast release of JoJo’s Bizarre Adventure: Heritage for the Future. The
+                        playable character Alessi has a move that allows him to transform characters into weaker
+                        versions of themselves temporarily (typically this transforms them into children, but not
+                        exclusively). Alessi mode has both characters fight in this state for the entire duration of the
+                        match.</p>
+                    <p class="pt-2">The changes themselves were fairly simple:</p>
+                    <div>
+                        <ol>
+                            <li>Have Alessi mode transformation begin at roundstart</li>
+                            <li>Remove the Alessi mode transformation timer, so that it never ends</li>
+                            <li>Reduce the number of rounds to always be 1</li>
+                        </ol>
+                    </div>
+                    <p class="pt-2">Each of these changes only required a byte or two to be changed, with the main
+                        challenge being finding the location of what needed to be changed.</p>
+                    <p class="pt-2">When a match is initialized, a set of RAM addresses for each player are set to a
+                        default value of 0. By changing one of these RAM addresses to store the value that triggers the
+                        Alessi mode transformation, I was able to get the first, and most important, part completed.</p>
+                    <p class="pt-2">After that, I used Final Burn Alpha’s RAM watch tool to identify what RAM address
+                        stored the Alessi mode timer. After that, I went into Mame Debugger and removed the check that
+                        would return the player to normal once initiated.</p>
+                    <p class="pt-2">Finally,I repeated that process for the rounds required to win, as this is 2 by
+                        default and can be adjusted. Once done, I hardcoded the value to always be 1.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

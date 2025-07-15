@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="../css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Projects - HFTF Roman Cancel Hack</title>
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand noselect" href="../index.html">Nicholas Lang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-me">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#academic-projects">Academic Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#personal-projects">Personal Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../assets/Nick_Lang_CV.pdf">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="bd-content" role="main">
+        <div class="container text-light mt-md-4 mb-md-4 project-container">
+            <div class="row text-center heading project-header">
+                <div class="col py-3 px-2 px-md-5">
+                    <h1>Heritage for the Future: Rainbow Edition</h1>
+                </div>
+            </div>
+            <div class="row text-section project-content">
+                <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/rainbow-edition.png" class="d-block w-100 rounded-2 border"
+                                    alt="Rainbow Edition Romhack gameplay">
+                            </div>
+                            <div class="carousel-item ratio" style="--bs-aspect-ratio: calc(7/12 * 100%);">
+                                <iframe src="https://www.youtube.com/embed/lj_nk-oQqfo"
+                                    class="d-block w-100 rounded-2 border" title="Rainbow Edition Revision 2 Release"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pt-2">Rainbow edition is a romhack I created in Winter of 2020 for the Heritage for Our
+                        Future charity event that was hosted to help raise money for St. Jude’s Children’s Research
+                        Hospital. Rainbow Edition is an unofficial hack of Street Fighter II: Champion Edition that adds
+                        all sorts of absurd changes that radically alter the game.</p>
+                    <p class="pt-2">The goal of this romhack was to achieve a similar effect through making a wide
+                        variety of different, comically absurd changes to characters, alongside having them start with
+                        max resources. I was responsible for handling all the gameplay changes to the systems of the
+                        game, as well as individual characters, while another collaborator made the adjustments to the
+                        sound and music.</p>
+                    <p class="pt-2">At its core, the romhack was never designed to be a serious experience, and found
+                        itself victim to numerous inescapable checkmate situations as a result. Despite this, it
+                        achieved the goal I had set out to fulfill, and it made for an enjoyable experience for those
+                        wanting to play it, and those spectating it as well. Like the Roman Cancel romhack before it,
+                        this was also added to FightCade, the software client for playing arcade titles online.</p>
+                    <p class="pt-2">Attached below is a tweet containing the changes made in this romhack.</p>
+
+                    <!--Rainbow Edition Changes-->
+                    <div class="accordion mb-3" id="parentAccordion" data-bs-theme="dark">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOneParent" aria-expanded="false"
+                                    aria-controls="collapseOneParent">
+                                    Universal Changes
+                                </button>
+                            </h2>
+                            <div id="collapseOneParent" class="accordion-collapse collapse"
+                                data-bs-parent="#parentAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Scaling has been removed</li>
+                                        <li>The Infinite Prevention System has been removed</li>
+                                        <li>All characters in Stand On can perform an airdash (really just their
+                                            grounded dash in the air)</li>
+                                        <li>All characters begin with max meter</li>
+                                        <li>Most (but not all) specials and supers can now be canceled into one another,
+                                            or tandem in some cases. This may result in input overlap and might stop
+                                            some specials from coming out at all, or being far more inconsistent</li>
+                                        <li>Most Stand Off normals can now be cancelled into special or super, or tandem
+                                            in some cases</li>
+                                        <li>Cancelling a Rekka into the next hit will now cause it to cancel into the
+                                            first hit</li>
+                                        <li>Certain stages that were previously inacessible (outside story mode or
+                                            otherwise) are now available</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwoParent" aria-expanded="false"
+                                    aria-controls="collapseTwoParent">
+                                    Character Changes
+                                </button>
+                            </h2>
+                            <div id="collapseTwoParent" class="accordion-collapse collapse"
+                                data-bs-parent="#parentAccordion">
+                                <div class="accordion-body">
+                                    <div class="accordion" id="accordionChild">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOneChild" aria-expanded="true"
+                                                    aria-controls="collapseOneChild">
+                                                    Jotaro
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOneChild" class="accordion-collapse collapse show"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Star Breaker unblockable charge time is now 30 frames in Stand On and Stand Off</li>
+                                                        <li>Star Finger unblockable charge time is now 60 frames in Stand On and Stand Off</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwoChild"
+                                                    aria-expanded="false" aria-controls="collapseTwoChild">
+                                                    Kakyoin
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwoChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Now has New Kakyoin's Stand On dash</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThreeChild"
+                                                    aria-expanded="false" aria-controls="collapseThreeChild">
+                                                    Avdol
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThreeChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Stand On Ankh no longer has invincibility frames during move startup. Invincibility will only be present when Ankh is released</li>
+                                                        <li>2B and 2C now must be blocked low</li>
+                                                        <li>Avdol Stand On d.2C is now an overhead</li>
+                                                        <li>Input overlapping has disabled the ability to input command grab</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFourChild"
+                                                    aria-expanded="false" aria-controls="collapseFourChild">
+                                                    Polnareff
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFourChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>2C now has a higher vertical hitbox</li>
+                                                        <li>Increased damage on all variants of Last Shot</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFiveChild"
+                                                    aria-expanded="false" aria-controls="collapseFiveChild">
+                                                    Old Joseph
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFiveChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Now has Young Joseph's running speed</li>
+                                                        <li>Now has a proper airdash (unique from his grounded dash)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSixChild"
+                                                    aria-expanded="false" aria-controls="collapseSixChild">
+                                                    Iggy
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSixChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Sandball damage has been quintupled</li>
+                                                        <li>Sandball now does significantly more Stand Gauge damage on hit and block.<ul><li>30 for A version</li><li>60 for B version</li><li>90 for C version</li></ul></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSevenChild"
+                                                    aria-expanded="false" aria-controls="collapseSevenChild">
+                                                    Alessi
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSevenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Gun now deals 14 Stand Gauge damage on hit (7 on block)</li>
+                                                        <li>Gun damage output has been quintupled</li>
+                                                        <li>Child mode will now last for 8 seconds (was 96 frames prior, or 1 and a half seconds)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseEightChild"
+                                                    aria-expanded="false" aria-controls="collapseEightChild">
+                                                    Chaka
+                                                </button>
+                                            </h2>
+                                            <div id="collapseEightChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Chaka's Stand Gauge health has been increased to 88 (formerly 72)</li>
+                                                        <li>Stand On 6B now has faster startup and more hitstun (enough to combo afterwards)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseNineChild"
+                                                    aria-expanded="false" aria-controls="collapseNineChild">
+                                                    Devo
+                                                </button>
+                                            </h2>
+                                            <div id="collapseNineChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>All variants of 22X and Stand On 22X must now be blocked standing</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTenChild"
+                                                    aria-expanded="false" aria-controls="collapseTenChild">
+                                                    Midler
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>236S is now an untechable launcher</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseElevenChild"
+                                                    aria-expanded="false" aria-controls="collapseElevenChild">
+                                                    DIO
+                                                </button>
+                                            </h2>
+                                            <div id="collapseElevenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Stand Off knives now have faster startup (3 frames or so slower than Stand Off)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwelveChild"
+                                                    aria-expanded="false" aria-controls="collapseTwelveChild">
+                                                    Shadow Dio
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwelveChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>5C now has more hitstun</li>
+                                                        <li>Charisma super now has slightly faster startup</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThirteenChild"
+                                                    aria-expanded="false" aria-controls="collapseThirteenChild">
+                                                    Young Joseph
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThirteenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Startup on Red Stone of Aja super has been drastically reduced</li>
+                                                        <li>Startup on Clackers has been significantly reduced</li>
+                                                        <li>Startup on all variants of 63214 has been slightly reduced</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFourteenChild"
+                                                    aria-expanded="false" aria-controls="collapseFourteenChild">
+                                                    Hol Horse
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFourteenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>5C now causes an instant Stand Crash</li>
+                                                        <li>S bullet does 9 Stand damage on chip per bullet, and 18 on hit</li>
+                                                        <li>Hol Horse's glass special now drops Boingo instead of glass</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseFifteenChild"
+                                                    aria-expanded="false" aria-controls="collapseFifteenChild">
+                                                    Vanilla Ice
+                                                </button>
+                                            </h2>
+                                            <div id="collapseFifteenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Scrapped intro has been re-added against the Stardust Crusaders, barring Avdol and Iggy</li>
+                                                        <li>5A is now an overhead</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSixteenChild"
+                                                    aria-expanded="false" aria-controls="collapseSixteenChild">
+                                                    New Kakyoin
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSixteenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Nets now have increased hitstun and cause instant Stand Crash, to bring them in line with Kakyoin's</li>
+                                                        <li>Nets are now untechable</li>
+                                                        <li>Stand On Emerald Splash now travels fullscreen, bringing it in line with Kakyoin's</li>
+                                                        <li>Dash speed and defense have been increased to match Kakyoin's</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseSeventeenChild"
+                                                    aria-expanded="false" aria-controls="collapseSeventeenChild">
+                                                    Anubis Polnareff
+                                                </button>
+                                            </h2>
+                                            <div id="collapseSeventeenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Spinning sword special (623) has been replaced with Polnareff's Shooting Star</li>
+                                                        <li>2C now has increased blockstun, and must be blocked low</li>
+                                                        <li>Blockstun increased on d.2C</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseEighteenChild"
+                                                    aria-expanded="false" aria-controls="collapseEighteenChild">
+                                                    Petshop
+                                                </button>
+                                            </h2>
+                                            <div id="collapseEighteenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Defense is now slightly higher (matching Iggy's in Stand Off)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseNineteenChild"
+                                                    aria-expanded="false" aria-controls="collapseNineteenChild">
+                                                    Mariah
+                                                </button>
+                                            </h2>
+                                            <div id="collapseNineteenChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Each nut and bolt of 236AA has received a decent damage increase</li>
+                                                        <li>Mariah will begin match at max outlet level (only if Player 1)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwentyChild"
+                                                    aria-expanded="false" aria-controls="collapseTwentyChild">
+                                                    Hol Horse & Boingo
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwentyChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>S bullet now does 9 Stand damage on chip, 18 on hit</li>
+                                                        <li>Inputting a direction when inputting S bullet will change the starting direction</li>
+                                                        <li>Due to input overlapping, Command Grab only works from backwards 270 input</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwentyOneChild"
+                                                    aria-expanded="false" aria-controls="collapseTwentyOneChild">
+                                                    Rubber Soul
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwentyOneChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Now has Kakyoin's dash speed</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwentyTwoChild"
+                                                    aria-expanded="false" aria-controls="collapseTwentyTwoChild">
+                                                    Khan
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwentyTwoChild" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>Now has Hol Horse's defense (tied for highest in the game)</li>
+                                                        <li>Shoryuken special (623) is now air unblockable</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

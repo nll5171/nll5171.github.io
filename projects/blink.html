@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="../css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Projects - Blink</title>
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand noselect" href="../index.html">Nicholas Lang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-me">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#academic-projects">Academic Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#personal-projects">Personal Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../assets/Nick_Lang_CV.pdf">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="bd-content" role="main">
+        <div class="container text-light mt-md-4 mb-md-4 project-container">
+            <div class="row text-center heading project-header">
+                <div class="col py-3 px-2 px-md-5">
+                    <h1>Blink</h1>
+                </div>
+            </div>
+            <div class="row text-section project-content">
+                <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/blink.PNG" class="d-block w-100 rounded-2 border"
+                                    alt="Blink title screen">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/blink-gameplay.png" class="d-block w-100 rounded-2 border"
+                                    alt="Blink gameplay">
+                            </div>
+                            <div class="carousel-item ratio" style="--bs-aspect-ratio: 60%;">
+                                <iframe src="https://www.youtube.com/embed/gG0_rbH3uc4"
+                                    class="d-block w-100 rounded-2 border" title="IGME 235 Picross" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pt-2">Blink was the first project I worked on in RIT’s Game Design & Development program.
+                        The game was created in a group of 5 as part of the Game Development & Algorithmic Problem
+                        Solving II class I took during the latter half of my first academic year. As this was our first
+                        project, this was not created using a game engine, but rather in Monogame, a C# framework for
+                        game development.</p>
+                    <p class="pt-2">It is a puzzle game that sees the player control an eyeball that must carry boxes to
+                        specific destinations in each level. All the while, rats will be traveling along a specific path
+                        before targeting the eyeball once the path has finished. Shining light on the rats will return
+                        them to their starting position on their path, but your light is a limited resource that
+                        recovers slowly, and cannot be used while carrying boxes.</p>
+                    <p class="pt-2">Given the fairly simplistic nature of the game, we decided to expand upon what we
+                        had through the use of an interactive tutorial. The player is able to play around several
+                        tutorial sections with text teaching them about each aspect of the gameplay. The first section
+                        for instance, is dedicated to movement and controls, while the final one explains enemy
+                        behavior, visually demonstrating it all the while for the player to experience.</p>
+                    <p class="pt-2">My contributions to the project overall were with regards to everything concerning
+                        the light mechanics, from ensuring collision was in a proper cone shape and rotated accordingly
+                        with the position of the player. I also handled some of the process concerning the boxes, such
+                        as accommodating for rotation around the eyeball, and did code cleanup and documentation
+                        wherever possible.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

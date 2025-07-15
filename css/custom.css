@@ -1,0 +1,89 @@
+.navbar {
+    background-color: #752020;
+}
+
+body {
+    background-color: #4D1515 !important;
+}
+
+.text-section {
+    background-color: #992929;
+}
+
+.heading {
+    background-color: #C73636;
+}
+
+.card {
+    transition: transform .2s; /* Animation */
+}
+
+.card:hover {
+    transform: scale(1.05); /* (1.05% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.card-href {
+    text-decoration: none;  /* Lazily added so that no underlines appear on any text inside the cards */
+}
+
+.contact-sec {
+    background-color: #752020;
+}
+
+.project-container {
+    max-width: 720px !important;   /* Looks better when factoring in fluid images, and for readability as well */
+}
+
+.tool {
+    color: white;
+    text-decoration: none;
+}
+
+.tool-icon {
+    font-size: 4rem;
+    transition: font-size .2s;
+}
+
+.tool-icon:hover {
+    font-size: 5rem;
+}
+
+
+@media (min-width: 721px) {
+    .project-header {
+        border-top-left-radius: .375rem;
+        border-top-right-radius: .375rem;
+    }
+    
+    .project-content {
+        border-bottom-left-radius: .375rem;
+        border-bottom-right-radius: .375rem;
+    }   
+}
+
+.accordion {
+    --bs-accordion-bg: #4D1515 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #752020 !important;
+    color: #FF93A2 !important;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color) !important;
+}
+
+.accordion-button::after {
+    color: #FF93A2 !important;
+}
+
+code {
+    color: #8AD0FF !important; /* Standard bootstrap color has poor readability with the red color scheme I've been using */
+}
+
+/* .nav-link {
+    transition: all ease .5s;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    background-color: #F04141;
+} */
