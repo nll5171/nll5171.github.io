@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="../css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Projects - Internet Scavenger Hunt</title>
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand noselect" href="../index.html">Nicholas Lang</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about-me">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#professional-projects">Professional Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#academic-projects">Academic Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#personal-projects">Personal Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../assets/Nick_Lang_CV.pdf">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="bd-content" role="main">
+        <div class="container text-light mt-md-4 mb-md-4 project-container">
+            <div class="row text-center heading project-header">
+                <div class="col py-3 px-2 px-md-5">
+                    <h1>Internet Scavenger Hunt</h1>
+                </div>
+            </div>
+            <div class="row text-section project-content">
+                <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/scavenger-hunt-explore.png" class="d-block w-100 rounded-2 border"
+                                    alt="Internet Scavenger Hunt explore page">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/scavenger-hunt-create.png" class="d-block w-100 rounded-2 border"
+                                    alt="Internet Scavenger Hunt create page">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/scavenger-hunt-signup.png" class="d-block w-100 rounded-2 border"
+                                    alt="Internet Scavenger Hunt signup page">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pt-2">The final project for Rich Media Web Application Development II required us to
+                        create a full-stack web application using a MongoDB backend, alongside Redis. Since we had also
+                        finished learning
+                        React not too long ago, we were encouraged to use it as well, especially since it's extremely
+                        useful for creating reusable front-end components.</p>
+                    <p class="pt-2">The application was required to have support for Creating, Reading, Updating, and
+                        Deleting (CRUD) user accounts, as well as some type of MongoDB document, and a proof of concept
+                        for a payment model. The
+                        most common example of this was locking certain features behind a paywall, or limiting the
+                        amount of a feature you could utilize without paying for it. As a proof of concept though,
+                        premium would just be a toggleable feature stored on a person's account.</p>
+                    <p class="pt-2">At the time, I was thinking about how centralized the modern internet is, in that we
+                        typically only visit 4, maybe 5 websites where, back during the days of web 1.0 and web 2.0, you
+                        explored so many other different types of sites. The concept of making an internet scavenger
+                        hunt was intended to bring some of that back, by forcing people participating in these scavenger
+                        hunts to explore and find sites they'd otherwise have no reason to go to, and maybe help to
+                        spark some regained interest in de-centralizing the experience of browsing the web.</p>
+                    <p class="pt-2">To do this, I created 4 Mongoose models to be used in tandem with MongoDB: Users,
+                        Scavenger Hunts, Items, and Submissions. Users is self explanatory, Scavenger Hunts were the
+                        larger scale hunts themselves, items were the collections of tasks that comprised each scavenger
+                        hunt, and submissions were the user submissions to a particular scavenger hunt, since the idea
+                        was to be able to compete with other users.</p>
+                    <p class="pt-2">The backend gave me some trouble due to my relative inexperience with MongoDB at the
+                        time, but nothing too terrible. I also had more trouble than I would've liked with the
+                        front-end, as I spent a large amount of time trying to use the React Bootstrap library, only to
+                        run into several issues that eventually compelled me to just use standard Bootstrap.</p>
+                    <p class="pt-2">Due to time constraints from other finals and final projects, I wasn't able to
+                        finish everything I would've liked to on the project, and was only able to get a rudimentary
+                        front-end up. What I had created I was somewhat proud of, but at some point in the future, I
+                        think I'd like to reattempt making something like this, since I still think it'd be a neat idea.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
