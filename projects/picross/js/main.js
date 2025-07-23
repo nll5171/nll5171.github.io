@@ -175,7 +175,7 @@ window.onload = () => {
         }
 
         // Disable standard right click
-        app.view.addEventListener('contextmenu', event => event.preventDefault());
+        //app.view.addEventListener('contextmenu', event => event.preventDefault());
 
         currentElement = document.createElement("td");
         currentElement.appendChild(app.view);
