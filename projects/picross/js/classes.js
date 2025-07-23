@@ -42,7 +42,6 @@ class Image {
                 this.colorImage.onload = () => {
                     if (this.colorImage.complete) {
                         cRGBA = this.getDataOfImage(ctx, this.colorImage);
-                        console.log(cRGBA);
                         resolve();
                     }
                 };
@@ -134,12 +133,14 @@ class Image {
 
     // Returns the RGBA data of the image via usage of a canvas
     getDataOfImage(ctx, img) {
-        ctx.drawImage(img, 0, 0);
+        if (img.complete) {
+            ctx.drawImage(img, 0, 0);
 
-        const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
-        ctx.clearRect(0, 0, img.width, img.height);
+            const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
+            ctx.clearRect(0, 0, img.width, img.height);
 
-        return rgba;
+            return rgba;
+        }
     }
 }
 
