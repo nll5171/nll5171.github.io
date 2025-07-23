@@ -165,28 +165,29 @@ window.onload = () => {
         currentElement.appendChild(rowTable);
         bottomRow.appendChild(currentElement);
 
-        // // Create PIXI.js canvas
-        // for (let a = 0; a < selectedBlocks.length; a++) {
-        //     let blockRow = selectedBlocks[a];
+        // Create PIXI.js canvas
+        for (let a = 0; a < selectedBlocks.length; a++) {
+            let blockRow = selectedBlocks[a];
 
-        //     for (let b = 0; b < blockRow.length; b++) {
-        //         app.stage.addChild(blockRow[b]);
-        //     }
-        // }
+            for (let b = 0; b < blockRow.length; b++) {
+                app.stage.addChild(blockRow[b]);
+            }
+        }
 
-        // app.view.addEventListener('contextmenu', event => event.preventDefault());
+        // Disable standard right click
+        app.view.addEventListener('contextmenu', event => event.preventDefault());
 
-        // currentElement = document.createElement("td");
-        // currentElement.appendChild(app.view);
-        // bottomRow.appendChild(currentElement);
-        // displayTable.appendChild(bottomRow);
+        currentElement = document.createElement("td");
+        currentElement.appendChild(app.view);
+        bottomRow.appendChild(currentElement);
+        displayTable.appendChild(bottomRow);
 
-        // document.querySelector("#puzzle-display").appendChild(displayTable);
-        // //document.querySelector("#puzzle-display").appendChild(app.view);
+        document.querySelector("#puzzle-display").appendChild(displayTable);
+        //document.querySelector("#puzzle-display").appendChild(app.view);
 
         // app.ticker.add(checkResults);
 
-        // addReplayButton();
+        addReplayButton();
     }
 
     function checkResults() {
