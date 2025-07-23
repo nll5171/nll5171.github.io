@@ -3,252 +3,254 @@ window.onload = () => {
     const maxHeight = (Math.floor(document.querySelector("#puzzle-display").clientHeight / 16) - 8) * 16;
     let widthHeight = (maxWidth > maxHeight) ? maxHeight : maxWidth;
 
-    const app = new PIXI.Application({
-        width: widthHeight,
-        height: widthHeight
-    });
+    console.log('Page Loaded');
 
-    // Scene dimensions
-    const sceneWidth = app.view.width;
-    const sceneHeight = app.view.height;
+    // const app = new PIXI.Application({
+    //     width: widthHeight,
+    //     height: widthHeight
+    // });
 
-    // The set of images used by the game.
-    const imageNames = [
-        "goomba",
-        "kirby",
-        "link",
-        "mario",
-        "waddle-dee"
-    ];
+    // // Scene dimensions
+    // const sceneWidth = app.view.width;
+    // const sceneHeight = app.view.height;
 
-    let images = [];
+    // // The set of images used by the game.
+    // const imageNames = [
+    //     "goomba",
+    //     "kirby",
+    //     "link",
+    //     "mario",
+    //     "waddle-dee"
+    // ];
 
-    let promises = [];
+    // let images = [];
 
-    let music, selectSound, deselectSound, hoverSound;
+    // let promises = [];
 
-    // Generate promises for loading images. Need to be done before making Picross board
-    for (let a = 0; a < imageNames.length; a++) {
-        let image = new Image(imageNames[a], sceneWidth, sceneHeight);
-        promises.push(image.constructBlocks());
-    }
+    // let music, selectSound, deselectSound, hoverSound;
 
-    // Handle loading everything once images have loaded
-    Promise.all(promises).then((values) => {
-        values.forEach(value => images.push(value));
-        app.loader.onComplete.add(() => { console.log('PIXI.Application loaded') });
-        //app.loader.onComplete.add(displayPuzzle);
-        app.loader.load();
+    // // Generate promises for loading images. Need to be done before making Picross board
+    // for (let a = 0; a < imageNames.length; a++) {
+    //     let image = new Image(imageNames[a], sceneWidth, sceneHeight);
+    //     promises.push(image.constructBlocks());
+    // }
 
-        // Load sounds
-        music = new Howl({
-            src: ['audio/romantic.mp3'],
-            autoplay: true,
-            loop: true,
-            volume: 0.3
-        });
+    // // Handle loading everything once images have loaded
+    // Promise.all(promises).then((values) => {
+    //     values.forEach(value => images.push(value));
+    //     app.loader.onComplete.add(() => { console.log('PIXI.Application loaded') });
+    //     //app.loader.onComplete.add(displayPuzzle);
+    //     app.loader.load();
 
-        selectSound = new Howl({
-            src: ['audio/select.wav']
-        });
+    //     // Load sounds
+    //     music = new Howl({
+    //         src: ['audio/romantic.mp3'],
+    //         autoplay: true,
+    //         loop: true,
+    //         volume: 0.3
+    //     });
 
-        deselectSound = new Howl({
-            src: ['audio/deselect.wav']
-        });
+    //     selectSound = new Howl({
+    //         src: ['audio/select.wav']
+    //     });
 
-        hoverSound = new Howl({
-            src: ['audio/hover.wav']
-        });
+    //     deselectSound = new Howl({
+    //         src: ['audio/deselect.wav']
+    //     });
 
-        music.play();
-    });
+    //     hoverSound = new Howl({
+    //         src: ['audio/hover.wav']
+    //     });
 
-    let selectedImage;
-    let selectedBlocks;
+    //     music.play();
+    // });
 
-    let displayTable;
+    // let selectedImage;
+    // let selectedBlocks;
 
-    function displayPuzzle() {
-        resetPuzzles();
+    // let displayTable;
 
-        // selects a random image
-        selectedImage = images[getRandomInt(images.length)];
-        console.log(selectedImage);
-        selectedBlocks = selectedImage.blocks;
+    // function displayPuzzle() {
+    //     resetPuzzles();
 
-        const blockWidth = sceneWidth / selectedBlocks.length;
-        const blockHeight = sceneHeight / selectedBlocks[0].length;
+    //     // selects a random image
+    //     selectedImage = images[getRandomInt(images.length)];
+    //     console.log(selectedImage);
+    //     selectedBlocks = selectedImage.blocks;
 
-        displayTable = document.createElement("table");
-        const topRow = document.createElement("tr");
+    //     const blockWidth = sceneWidth / selectedBlocks.length;
+    //     const blockHeight = sceneHeight / selectedBlocks[0].length;
 
-        const borderWeight = 1;
+    //     displayTable = document.createElement("table");
+    //     const topRow = document.createElement("tr");
 
-        let currentElement = document.createElement("td");
-        topRow.appendChild(currentElement);
+    //     const borderWeight = 1;
 
-        // Create the nested table for column hints
-        const columnTable = document.createElement("table");
-        columnTable.id = "column-table";
-        columnTable.style.width = `${sceneWidth}px`;
+    //     let currentElement = document.createElement("td");
+    //     topRow.appendChild(currentElement);
 
-        const columnRow = document.createElement("tr");
-        const puzzleColumns = selectedImage.puzzleColumns;
+    //     // Create the nested table for column hints
+    //     const columnTable = document.createElement("table");
+    //     columnTable.id = "column-table";
+    //     columnTable.style.width = `${sceneWidth}px`;
 
-        for (let a = 0; a < puzzleColumns.length; a++) {
-            currentElement = document.createElement("td");
+    //     const columnRow = document.createElement("tr");
+    //     const puzzleColumns = selectedImage.puzzleColumns;
 
-            currentElement.style.width = `${blockWidth}px`;
+    //     for (let a = 0; a < puzzleColumns.length; a++) {
+    //         currentElement = document.createElement("td");
 
-            if (a == 0) {
-                currentElement.style.borderLeft = "1px solid black";
-                currentElement.style.borderRight = "1px solid black";
-            }
+    //         currentElement.style.width = `${blockWidth}px`;
 
-            else
-                currentElement.style.borderRight = "1px solid black";
+    //         if (a == 0) {
+    //             currentElement.style.borderLeft = "1px solid black";
+    //             currentElement.style.borderRight = "1px solid black";
+    //         }
 
-            for (let b = 0; b < puzzleColumns[a].length; b++) {
-                let currentNum = document.createElement("p");
-                currentNum.innerHTML = puzzleColumns[a][b];
-                currentElement.appendChild(currentNum);
-            }
+    //         else
+    //             currentElement.style.borderRight = "1px solid black";
 
-            columnRow.appendChild(currentElement);
-        }
+    //         for (let b = 0; b < puzzleColumns[a].length; b++) {
+    //             let currentNum = document.createElement("p");
+    //             currentNum.innerHTML = puzzleColumns[a][b];
+    //             currentElement.appendChild(currentNum);
+    //         }
 
-        // Completes the nested table and top row of table
-        columnTable.appendChild(columnRow);
+    //         columnRow.appendChild(currentElement);
+    //     }
 
-        // Adds the columnTable to a td element before adding it
-        currentElement = document.createElement("td");
-        currentElement.appendChild(columnTable);
+    //     // Completes the nested table and top row of table
+    //     columnTable.appendChild(columnRow);
 
-        topRow.appendChild(currentElement);
-        displayTable.appendChild(topRow);
+    //     // Adds the columnTable to a td element before adding it
+    //     currentElement = document.createElement("td");
+    //     currentElement.appendChild(columnTable);
 
-        const bottomRow = document.createElement("tr");
+    //     topRow.appendChild(currentElement);
+    //     displayTable.appendChild(topRow);
 
-        // Create the nested table for row hints
-        const rowTable = document.createElement("table");
-        rowTable.id = "row-table";
-        rowTable.style.height = `${sceneHeight}px`;
+    //     const bottomRow = document.createElement("tr");
 
-        const puzzleRows = selectedImage.puzzleRows;
+    //     // Create the nested table for row hints
+    //     const rowTable = document.createElement("table");
+    //     rowTable.id = "row-table";
+    //     rowTable.style.height = `${sceneHeight}px`;
 
-        for (let a = 0; a < puzzleRows.length; a++) {
-            let currentRow = document.createElement("tr");
-            currentElement = document.createElement("td");
+    //     const puzzleRows = selectedImage.puzzleRows;
 
-            currentElement.style.height = `${blockHeight}px`;
+    //     for (let a = 0; a < puzzleRows.length; a++) {
+    //         let currentRow = document.createElement("tr");
+    //         currentElement = document.createElement("td");
 
-            if (a == 0) {
-                currentElement.style.borderTop = "1px solid black";
-                currentElement.style.borderBottom = "1px solid black";
-            }
+    //         currentElement.style.height = `${blockHeight}px`;
 
-            else
-                currentElement.style.borderBottom = "1px solid black";
+    //         if (a == 0) {
+    //             currentElement.style.borderTop = "1px solid black";
+    //             currentElement.style.borderBottom = "1px solid black";
+    //         }
 
-            for (let b = 0; b < puzzleRows[a].length; b++) {
-                let currentNum = document.createElement("p");
-                currentNum.innerHTML = puzzleRows[a][b];
-                currentElement.appendChild(currentNum);
-            }
+    //         else
+    //             currentElement.style.borderBottom = "1px solid black";
 
-            currentRow.appendChild(currentElement);
-            rowTable.appendChild(currentRow);
-        }
+    //         for (let b = 0; b < puzzleRows[a].length; b++) {
+    //             let currentNum = document.createElement("p");
+    //             currentNum.innerHTML = puzzleRows[a][b];
+    //             currentElement.appendChild(currentNum);
+    //         }
 
-        currentElement = document.createElement("td");
-        currentElement.appendChild(rowTable);
-        bottomRow.appendChild(currentElement);
+    //         currentRow.appendChild(currentElement);
+    //         rowTable.appendChild(currentRow);
+    //     }
 
-        // Create PIXI.js canvas
-        for (let a = 0; a < selectedBlocks.length; a++) {
-            let blockRow = selectedBlocks[a];
+    //     currentElement = document.createElement("td");
+    //     currentElement.appendChild(rowTable);
+    //     bottomRow.appendChild(currentElement);
 
-            for (let b = 0; b < blockRow.length; b++) {
-                app.stage.addChild(blockRow[b]);
-            }
-        }
+    //     // Create PIXI.js canvas
+    //     for (let a = 0; a < selectedBlocks.length; a++) {
+    //         let blockRow = selectedBlocks[a];
 
-        app.view.addEventListener('contextmenu', event => event.preventDefault());
+    //         for (let b = 0; b < blockRow.length; b++) {
+    //             app.stage.addChild(blockRow[b]);
+    //         }
+    //     }
 
-        currentElement = document.createElement("td");
-        currentElement.appendChild(app.view);
-        bottomRow.appendChild(currentElement);
-        displayTable.appendChild(bottomRow);
+    //     app.view.addEventListener('contextmenu', event => event.preventDefault());
 
-        document.querySelector("#puzzle-display").appendChild(displayTable);
-        //document.querySelector("#puzzle-display").appendChild(app.view);
+    //     currentElement = document.createElement("td");
+    //     currentElement.appendChild(app.view);
+    //     bottomRow.appendChild(currentElement);
+    //     displayTable.appendChild(bottomRow);
 
-        app.ticker.add(checkResults);
+    //     document.querySelector("#puzzle-display").appendChild(displayTable);
+    //     //document.querySelector("#puzzle-display").appendChild(app.view);
 
-        addReplayButton();
-    }
+    //     app.ticker.add(checkResults);
 
-    function checkResults() {
-        if (puzzleComplete()) {
-            console.log("Puzzle Complete!");
-            app.ticker.remove(checkResults);
-            removeBlockInteraction();
-            app.ticker.add(displayCompletePuzzle);
-        }
-    }
+    //     addReplayButton();
+    // }
 
-    function puzzleComplete() {
-        for (let a = 0; a < selectedBlocks.length; a++) {
-            for (let b = 0; b < selectedBlocks[a].length; b++) {
-                if (selectedBlocks[a][b].filled != selectedBlocks[a][b].selected) {
-                    console.log(`Row ${a} column ${b}: is ${selectedBlocks[a][b].selected} should be ${selectedBlocks[a][b].filled}`);
-                    return false;
-                }
-                //return false;
-            }
-        }
+    // function checkResults() {
+    //     if (puzzleComplete()) {
+    //         console.log("Puzzle Complete!");
+    //         app.ticker.remove(checkResults);
+    //         removeBlockInteraction();
+    //         app.ticker.add(displayCompletePuzzle);
+    //     }
+    // }
 
-        return true;
-    }
+    // function puzzleComplete() {
+    //     for (let a = 0; a < selectedBlocks.length; a++) {
+    //         for (let b = 0; b < selectedBlocks[a].length; b++) {
+    //             if (selectedBlocks[a][b].filled != selectedBlocks[a][b].selected) {
+    //                 console.log(`Row ${a} column ${b}: is ${selectedBlocks[a][b].selected} should be ${selectedBlocks[a][b].filled}`);
+    //                 return false;
+    //             }
+    //             //return false;
+    //         }
+    //     }
 
-    function removeBlockInteraction() {
-        for (let a = 0; a < selectedBlocks.length; a++) {
-            for (let b = 0; b < selectedBlocks[a].length; b++)
-                selectedBlocks[a][b].interactive = false;
-        }
-    }
+    //     return true;
+    // }
 
-    let blockCounter = 0;
+    // function removeBlockInteraction() {
+    //     for (let a = 0; a < selectedBlocks.length; a++) {
+    //         for (let b = 0; b < selectedBlocks[a].length; b++)
+    //             selectedBlocks[a][b].interactive = false;
+    //     }
+    // }
 
-    function displayCompletePuzzle() {
-        let currentBlock = selectedBlocks[Math.floor(blockCounter / selectedBlocks.length)][blockCounter % selectedBlocks[0].length];
-        currentBlock.displayColor = currentBlock.color;
-        currentBlock.drawBlock(currentBlock.displayColor);
-        blockCounter++;
+    // let blockCounter = 0;
 
-        if (blockCounter == selectedBlocks.length * selectedBlocks[0].length)
-            app.ticker.remove(displayCompletePuzzle);
-    }
+    // function displayCompletePuzzle() {
+    //     let currentBlock = selectedBlocks[Math.floor(blockCounter / selectedBlocks.length)][blockCounter % selectedBlocks[0].length];
+    //     currentBlock.displayColor = currentBlock.color;
+    //     currentBlock.drawBlock(currentBlock.displayColor);
+    //     blockCounter++;
 
-    function resetPuzzles() {
-        images.forEach(image => image.resetPuzzle());
-        blockCounter = 0;
+    //     if (blockCounter == selectedBlocks.length * selectedBlocks[0].length)
+    //         app.ticker.remove(displayCompletePuzzle);
+    // }
 
-        if (displayTable != null) document.querySelector("#puzzle-display").removeChild(displayTable);
-        if (replayButton != null) document.querySelector("#button-container").removeChild(replayButton);
-    }
+    // function resetPuzzles() {
+    //     images.forEach(image => image.resetPuzzle());
+    //     blockCounter = 0;
 
-    let replayButton;
+    //     if (displayTable != null) document.querySelector("#puzzle-display").removeChild(displayTable);
+    //     if (replayButton != null) document.querySelector("#button-container").removeChild(replayButton);
+    // }
 
-    function addReplayButton() {
-        replayButton = document.createElement("button");
-        replayButton.type = "button";
-        replayButton.id = "replay-button";
-        replayButton.classList.add("btn");
-        replayButton.classList.add("btn-lg");
-        replayButton.innerHTML = "Generate New Puzzle";
+    // let replayButton;
 
-        replayButton.addEventListener("click", displayPuzzle);
-        document.querySelector("#button-container").appendChild(replayButton);
-    }
+    // function addReplayButton() {
+    //     replayButton = document.createElement("button");
+    //     replayButton.type = "button";
+    //     replayButton.id = "replay-button";
+    //     replayButton.classList.add("btn");
+    //     replayButton.classList.add("btn-lg");
+    //     replayButton.innerHTML = "Generate New Puzzle";
+
+    //     replayButton.addEventListener("click", displayPuzzle);
+    //     document.querySelector("#button-container").appendChild(replayButton);
+    // }
 }
