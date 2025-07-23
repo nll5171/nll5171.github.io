@@ -36,7 +36,8 @@ for(let a = 0; a < imageNames.length; a++) {
 
 Promise.all(promises).then((values) => {
     values.forEach(value => images.push(value));
-    app.loader.onComplete.add(displayPuzzle);
+    //app.loader.onComplete.add(displayPuzzle);
+    app.loader.onComplete.add(() => { console.log('PIXI.Application loaded') });
     app.loader.load();
 
     // Load sounds
