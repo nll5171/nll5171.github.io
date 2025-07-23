@@ -30,6 +30,10 @@ class Image {
         return new Promise((resolve) => {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.onload = () => {
+                    while(!this.colorImage.complete) {
+                        // Loop infinitely until image is properly loaded
+                    }
+
                     mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
                     resolve();
                 };
@@ -38,6 +42,10 @@ class Image {
 
             let colorPromise = new Promise((resolve) => {
                 this.colorImage.onload = () => {
+                    while(!this.colorImage.complete) {
+                        // Loop infinitely until image is properly loaded
+                    }
+
                     cRGBA = this.getDataOfImage(ctx, this.colorImage);
                     resolve();
                 };
@@ -53,7 +61,6 @@ class Image {
             
                     for(let b = 0; b < this.colorImage.height; b++) {
                         // Checks if pixel is filled in
-                        console.log(mRGBA[((this.monochromeImage.width * a) + b) * 4]);
                         let filled = mRGBA[((this.monochromeImage.width * a) + b) * 4] == 0;
                         let completeColor = "0x";
 
