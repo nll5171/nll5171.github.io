@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Picross!</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<header id="page-title" class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+		<h1>Picross</h1>
+	</header>
+	<div class="container-fluid">
+		<div class="row flex-xl-nowrap">
+			<div id="instructions" class="col-12 col-md-3 col-xl-3 py-md-3 pl-md-5 bd-sidebar">
+				<h2 class="bd-title">How to Play</h2>
+				<p>This is a puzzle game in which you fill in blocks in a grid based on the numbers on each row and column to make a picture.</p>
+				<p>Each number indicates the amount of blocks to fill in consecutively in that row or column. Spaces between numbers mean that there is a gap of at least 1 block between the filled-in blocks.</p>
+				<p>Left click to fill-in a block. Left click again to undo.</p>
+				<p>You can also right click to mark blocks that you don't fill in. These will be colored gray.</p>
+				<p>Once complete, the final picture will be shown!</p>
+				<p>If you ever want to attempt a different puzzle, click below to try a different one.</p>
+				<div id="button-container" class="container mt-1"></div>
+				<div class="bd-footer py-4 py-md-5 mt-5">
+					<p class="credits small text-muted">Heavily inspired by Henry Liou's implementation of Picross. Play <a href="http://liouh.com/picross/">here</a></p>
+					<p class="credits small text-muted">Music by: <a href="https://www.bensound.com/free-music-for-videos">https://www.bensound.com/free-music-for-videos</a></p>
+				</div>
+			</div>
+			<main id="puzzle-display" class="col-12 col-md-9 col-xl-9 py-md-3 pl-md-5 bd-content" role="main"></main>
+		</div>
+	</div>
+
+	<!-- External libraries -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.8/browser/pixi.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- My JS files -->
+    <script src="js/utilities.js"></script>
+	<script src="js/classes.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
