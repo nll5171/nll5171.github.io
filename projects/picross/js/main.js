@@ -5,10 +5,10 @@ window.onload = () => {
 
     console.log('Page Loaded');
 
-    // const app = new PIXI.Application({
-    //     width: widthHeight,
-    //     height: widthHeight
-    // });
+    const app = new PIXI.Application({
+        width: widthHeight,
+        height: widthHeight
+    });
 
     // // Scene dimensions
     // const sceneWidth = app.view.width;
