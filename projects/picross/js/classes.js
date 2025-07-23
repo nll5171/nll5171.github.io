@@ -30,10 +30,7 @@ class Image {
         return new Promise((resolve) => {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.onload = () => {
-                    while(!this.colorImage.complete) {
-                        // Loop infinitely until image is properly loaded
-                    }
-
+                    console.log(this.monochromeImage.complete);
                     mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
                     resolve();
                 };
@@ -42,10 +39,7 @@ class Image {
 
             let colorPromise = new Promise((resolve) => {
                 this.colorImage.onload = () => {
-                    while(!this.colorImage.complete) {
-                        // Loop infinitely until image is properly loaded
-                    }
-
+                    console.log(this.colorImage.complete);
                     cRGBA = this.getDataOfImage(ctx, this.colorImage);
                     resolve();
                 };
