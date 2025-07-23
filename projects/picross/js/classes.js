@@ -135,11 +135,12 @@ class Image {
     getDataOfImage(ctx, img) {
         if (img.complete) {
             ctx.drawImage(img, 0, 0);
+            setTimeout(() => {
+                const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
+                ctx.clearRect(0, 0, img.width, img.height);
 
-            const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
-            ctx.clearRect(0, 0, img.width, img.height);
-
-            return rgba;
+                return rgba;
+            }, 1);
         }
     }
 }
