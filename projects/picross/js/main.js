@@ -1,6 +1,3 @@
-// We will use `strict mode`, which helps us by having the browser catch many common JS mistakes
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
-"use strict";
 const maxWidth = (Math.floor(document.querySelector("#puzzle-display").clientWidth / 16) - 12) * 16;
 const maxHeight = (Math.floor(document.querySelector("#puzzle-display").clientHeight / 16) - 8) * 16;
 let widthHeight = (maxWidth > maxHeight) ? maxHeight : maxWidth;
@@ -29,39 +26,43 @@ let promises = [];
 
 let music, selectSound, deselectSound, hoverSound;
 
-for(let a = 0; a < imageNames.length; a++) {
-    let image = new Image(imageNames[a], sceneWidth, sceneHeight);
-    promises.push(image.constructBlocks());
+window.onload = () => {
+    // Generate promises for loading images. Need to be done before making Picross board
+    for(let a = 0; a < imageNames.length; a++) {
+        let image = new Image(imageNames[a], sceneWidth, sceneHeight);
+        promises.push(image.constructBlocks());
+    }
+
+    // Handle loading everything once images have loaded
+    Promise.all(promises).then((values) => {
+        values.forEach(value => images.push(value));
+        app.loader.onComplete.add(() => { console.log('PIXI.Application loaded') });
+        //app.loader.onComplete.add(displayPuzzle);
+        app.loader.load();
+
+        // Load sounds
+        music = new Howl({
+            src: ['audio/romantic.mp3'],
+            autoplay: true,
+            loop: true,
+            volume: 0.3
+        });
+
+        selectSound = new Howl({
+            src: ['audio/select.wav']
+        });
+
+        deselectSound = new Howl({
+            src: ['audio/deselect.wav']
+        });
+
+        hoverSound = new Howl({
+            src: ['audio/hover.wav']
+        });
+        
+        music.play();
+    });
 }
-
-Promise.all(promises).then((values) => {
-    values.forEach(value => images.push(value));
-    //app.loader.onComplete.add(displayPuzzle);
-    app.loader.onComplete.add(() => { console.log('PIXI.Application loaded') });
-    app.loader.load();
-
-    // Load sounds
-    music = new Howl({
-        src: ['audio/romantic.mp3'],
-        autoplay: true,
-        loop: true,
-        volume: 0.3
-    });
-
-    selectSound = new Howl({
-        src: ['audio/select.wav']
-    });
-
-    deselectSound = new Howl({
-        src: ['audio/deselect.wav']
-    });
-
-    hoverSound = new Howl({
-        src: ['audio/hover.wav']
-    });
-    
-    music.play();
-});
 
 let selectedImage;
 let selectedBlocks;
