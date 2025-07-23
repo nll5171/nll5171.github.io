@@ -3,8 +3,9 @@ class Image {
         this.monochromeImage = document.createElement("img");
         this.colorImage = document.createElement("img");
         this.blocks = [];
-        this.monochromeImage.src = `./images/${name}-monochrome.png`;
-        this.colorImage.src = `./images/${name}-color.png`;
+        this.name = name;
+        // this.monochromeImage.src = `./images/${name}-monochrome.png`;
+        // this.colorImage.src = `./images/${name}-color.png`;
         this.monochromeImage.loading = 'eager';
         this.colorImage.loading = 'eager';
 
@@ -32,6 +33,7 @@ class Image {
                     mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
                     resolve();
                 };
+                this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
             });
 
             let colorPromise = new Promise((resolve) => {
@@ -39,6 +41,7 @@ class Image {
                     cRGBA = this.getDataOfImage(ctx, this.colorImage);
                     resolve();
                 };
+                this.colorImage.src = `./images/${this.name}-color.png`;
             });
 
             Promise.all([monochromePromise, colorPromise]).then(() => {
