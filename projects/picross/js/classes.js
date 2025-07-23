@@ -30,7 +30,6 @@ class Image {
         return new Promise((resolve) => {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.onload = () => {
-                    console.log(this.monochromeImage.complete);
                     if (this.monochromeImage.complete) {
                         mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
                         resolve();
@@ -43,6 +42,7 @@ class Image {
                 this.colorImage.onload = () => {
                     if (this.colorImage.complete) {
                         cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                        console.log(cRGBA);
                         resolve();
                     }
                 };
