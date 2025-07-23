@@ -31,17 +31,20 @@ class Image {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.onload = () => {
                     console.log(this.monochromeImage.complete);
-                    mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
-                    resolve();
+                    if (this.monochromeImage.complete) {
+                        mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
+                        resolve();
+                    }
                 };
                 this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
             });
 
             let colorPromise = new Promise((resolve) => {
                 this.colorImage.onload = () => {
-                    console.log(this.colorImage.complete);
-                    cRGBA = this.getDataOfImage(ctx, this.colorImage);
-                    resolve();
+                    if (this.colorImage.complete) {
+                        cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                        resolve();
+                    }
                 };
                 this.colorImage.src = `./images/${this.name}-color.png`;
             });
