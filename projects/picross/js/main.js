@@ -1,3 +1,5 @@
+let music, selectSound, deselectSound, hoverSound;
+
 window.onload = () => {
     const maxWidth = (Math.floor(document.querySelector("#puzzle-display").clientWidth / 16) - 12) * 16;
     const maxHeight = (Math.floor(document.querySelector("#puzzle-display").clientHeight / 16) - 8) * 16;
@@ -26,8 +28,6 @@ window.onload = () => {
     let images = [];
 
     let promises = [];
-
-    let music, selectSound, deselectSound, hoverSound;
 
     // Generate promises for loading images. Need to be done before making Picross board
     for (let a = 0; a < imageNames.length; a++) {

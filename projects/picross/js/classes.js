@@ -30,18 +30,6 @@ class Image {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.onload = () => {
                     mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
-                    
-                    // // Attempts to resolve issue where monocrhome image is not fully loaded
-                    // let allZero = true;
-                    
-                    // for(let a = 0; a < mRGBA.length; a++) {
-                    //     if(mRGBA[a] != 0)
-                    //         allZero = false;
-                    // }
-                    
-                    // if(allZero)
-                    //     location.reload();
-
                     resolve();
                 };
             });
