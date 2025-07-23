@@ -175,7 +175,7 @@ window.onload = () => {
         }
 
         // Disable standard right click
-        //app.view.addEventListener('contextmenu', event => event.preventDefault());
+        app.view.addEventListener('contextmenu', event => event.preventDefault());
 
         currentElement = document.createElement("td");
         currentElement.appendChild(app.view);
@@ -185,7 +185,7 @@ window.onload = () => {
         document.querySelector("#puzzle-display").appendChild(displayTable);
         //document.querySelector("#puzzle-display").appendChild(app.view);
 
-        // app.ticker.add(checkResults);
+        app.ticker.add(checkResults);
 
         addReplayButton();
     }
