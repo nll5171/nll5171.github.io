@@ -50,6 +50,7 @@ class Image {
             
                     for(let b = 0; b < this.colorImage.height; b++) {
                         // Checks if pixel is filled in
+                        console.log(mRGBA[((this.monochromeImage.width * a) + b) * 4]);
                         let filled = mRGBA[((this.monochromeImage.width * a) + b) * 4] == 0;
                         let completeColor = "0x";
 
