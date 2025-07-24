@@ -137,15 +137,14 @@ class Image {
     getDataOfImage(ctx, img) {
         if (img.complete) {
             ctx.drawImage(img, 0, 0);
-            console.log('Image drawn');
             return new Promise((resolve) => {
                 setTimeout(() => {
                     const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
-                    console.log('Image data received');
                     ctx.clearRect(0, 0, img.width, img.height);
+                    console.log(rgba);
 
                     resolve(rgba);
-                }, 10000);
+                }, 500);
             })
         }
     }
