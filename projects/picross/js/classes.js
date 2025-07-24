@@ -144,8 +144,8 @@ class Image {
                     console.log(rgba);
 
                     resolve(rgba);
-                }, 500);
-            })
+                }, 10000);
+            });
         }
     }
 }
