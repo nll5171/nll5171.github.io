@@ -136,9 +136,9 @@ class Image {
     // Returns the RGBA data of the image via usage of a canvas
     getDataOfImage(ctx, img) {
         if (img.complete) {
-            ctx.drawImage(img, 0, 0);
             return new Promise((resolve) => {
                 setTimeout(() => {
+                    ctx.drawImage(img, 0, 0);
                     const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
                     ctx.clearRect(0, 0, img.width, img.height);
                     console.log(rgba);
