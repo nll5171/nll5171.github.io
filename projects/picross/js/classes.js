@@ -3,9 +3,9 @@ class Image {
         this.monochromeImage = document.createElement("img");
         this.colorImage = document.createElement("img");
         this.blocks = [];
-        this.name = name;
-        // this.monochromeImage.src = `./images/${name}-monochrome.png`;
-        // this.colorImage.src = `./images/${name}-color.png`;
+        //this.name = name;
+        this.monochromeImage.src = `./images/${name}-monochrome.png`;
+        this.colorImage.src = `./images/${name}-color.png`;
         this.monochromeImage.loading = 'eager';
         this.colorImage.loading = 'eager';
 
@@ -34,7 +34,8 @@ class Image {
                     const imageData = ctx.getImageData(0, 0, this.monochromeImage.width, this.monochromeImage.height);
                     console.log(imageData);
                     mRGBA = imageData.data;
-                })
+                    resolve();
+                });
                 // this.monochromeImage.onload = () => {
                 //     //mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
                 //     this.getDataOfImage(ctx, this.monochromeImage).then((rgba) => {
@@ -42,18 +43,25 @@ class Image {
                 //         resolve();
                 //     });
                 // };
-                this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
+                //this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
             });
 
             let colorPromise = new Promise((resolve) => {
-                this.colorImage.onload = () => {
-                    //cRGBA = this.getDataOfImage(ctx, this.colorImage);
-                    this.getDataOfImage(ctx, this.colorImage).then((rgba) => {
-                        cRGBA = rgba;
-                        resolve();
-                    });
-                };
-                this.colorImage.src = `./images/${this.name}-color.png`;
+                this.colorImage.addEventListener('load', () => {
+                    ctx.drawImage(this.colorImage, 0, 0);
+                    const imageData = ctx.getImageData(0, 0, this.colorImage.width, this.colorImage.height);
+                    console.log(imageData);
+                    cRGBA = imageData.data;
+                    resolve();
+                });
+                // this.colorImage.onload = () => {
+                //     //cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                //     this.getDataOfImage(ctx, this.colorImage).then((rgba) => {
+                //         cRGBA = rgba;
+                //         resolve();
+                //     });
+                // };
+                // this.colorImage.src = `./images/${this.name}-color.png`;
             });
 
             Promise.all([monochromePromise, colorPromise]).then(() => {
