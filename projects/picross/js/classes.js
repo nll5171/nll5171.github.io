@@ -30,10 +30,11 @@ class Image {
         return new Promise((resolve) => {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.addEventListener('load', () => {
-                    ctx.drawImage(this.monochromeImage, 0, 0);
+                    //ctx.drawImage(this.monochromeImage, 0, 0);
                     const imageData = ctx.getImageData(0, 0, this.monochromeImage.width, this.monochromeImage.height);
                     console.log(imageData);
                     mRGBA = imageData.data;
+                    ctx.clearRect(0, 0, this.monochromeImage.width, this.monochromeImage.height);
                     resolve();
                 });
                 // this.monochromeImage.onload = () => {
@@ -48,10 +49,11 @@ class Image {
 
             let colorPromise = new Promise((resolve) => {
                 this.colorImage.addEventListener('load', () => {
-                    ctx.drawImage(this.colorImage, 0, 0);
+                    //ctx.drawImage(this.colorImage, 0, 0);
                     const imageData = ctx.getImageData(0, 0, this.colorImage.width, this.colorImage.height);
                     console.log(imageData);
                     cRGBA = imageData.data;
+                    ctx.clearRect(0, 0, this.colorImage.width, this.colorImage.height);
                     resolve();
                 });
                 // this.colorImage.onload = () => {
