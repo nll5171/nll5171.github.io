@@ -29,13 +29,19 @@ class Image {
 
         return new Promise((resolve) => {
             let monochromePromise = new Promise((resolve) => {
-                this.monochromeImage.onload = () => {
-                    //mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
-                    this.getDataOfImage(ctx, this.monochromeImage).then((rgba) => {
-                        mRGBA = rgba;
-                        resolve();
-                    });
-                };
+                this.monochromeImage.addEventListener('load', () => {
+                    ctx.drawImage(this.monochromeImage, 0, 0);
+                    const imageData = ctx.getImageData(0, 0, this.monochromeImage.width, this.monochromeImage.height);
+                    console.log(imageData);
+                    mRGBA = imageData.data;
+                })
+                // this.monochromeImage.onload = () => {
+                //     //mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
+                //     this.getDataOfImage(ctx, this.monochromeImage).then((rgba) => {
+                //         mRGBA = rgba;
+                //         resolve();
+                //     });
+                // };
                 this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
             });
 
