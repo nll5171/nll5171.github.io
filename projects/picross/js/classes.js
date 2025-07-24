@@ -30,20 +30,22 @@ class Image {
         return new Promise((resolve) => {
             let monochromePromise = new Promise((resolve) => {
                 this.monochromeImage.onload = () => {
-                    if (this.monochromeImage.complete) {
-                        mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
+                    //mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
+                    this.getDataOfImage(ctx, this.monochromeImage).then((rgba) => {
+                        mRGBA = rgba;
                         resolve();
-                    }
+                    });
                 };
                 this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
             });
 
             let colorPromise = new Promise((resolve) => {
                 this.colorImage.onload = () => {
-                    if (this.colorImage.complete) {
-                        cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                    //cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                    this.getDataOfImage(ctx, this.colorImage).then((rgba) => {
+                        cRGBA = rgba;
                         resolve();
-                    }
+                    });
                 };
                 this.colorImage.src = `./images/${this.name}-color.png`;
             });
@@ -135,12 +137,14 @@ class Image {
     getDataOfImage(ctx, img) {
         if (img.complete) {
             ctx.drawImage(img, 0, 0);
-            setTimeout(() => {
-                const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
-                ctx.clearRect(0, 0, img.width, img.height);
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
+                    ctx.clearRect(0, 0, img.width, img.height);
 
-                return rgba;
-            }, 1);
+                    resolve(rgba);
+                }, 10);
+            })
         }
     }
 }
