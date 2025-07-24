@@ -22,8 +22,8 @@ class Image {
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext('2d');
 
-        canvas.width = this.colorImage.width;
-        canvas.height = this.colorImage.height;
+        //canvas.width = this.colorImage.width;
+        //canvas.height = this.colorImage.height;
 
         let mRGBA;
         let cRGBA;
