@@ -11,153 +11,144 @@ class Image {
 
         this.puzzleRows = [];
         this.puzzleColumns = [];
-
+    
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
     }
 
     // Creates block for each pixel of the image. Black/White value 
     constructBlocks() {
-        const canvas = document.createElement("canvas");
-        // const ctx = canvas.getContext('2d');
+        // Load invisible canvas on page.
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext('2d');
 
-        // canvas.width = this.colorImage.width;
-        // canvas.height = this.colorImage.height;
+        canvas.width = this.colorImage.width;
+        canvas.height = this.colorImage.height;
 
-        // let mRGBA;
-        // let cRGBA;
+        let mRGBA;
+        let cRGBA;
 
         return new Promise((resolve) => {
-            canvas.addEventListener('load', () => {
-                const ctx = canvas.getContext('2d');
+            let monochromePromise = new Promise((resolve) => {
+                // this.monochromeImage.addEventListener('load', () => {
+                //     ctx.drawImage(this.monochromeImage, 0, 0);
+                //     const imageData = ctx.getImageData(0, 0, this.monochromeImage.width, this.monochromeImage.height);
+                //     console.log(imageData);
+                //     mRGBA = imageData.data;
+                //     ctx.clearRect(0, 0, this.monochromeImage.width, this.monochromeImage.height);
+                //     resolve();
+                // });
+                // this.monochromeImage.onload = () => {
+                //     //mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
+                //     this.getDataOfImage(ctx, this.monochromeImage).then((rgba) => {
+                //         mRGBA = rgba;
+                //         resolve();
+                //     });
+                // };
+                //this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
+                this.monochromeImage.addEventListener('load', () => {
+                    mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
+                    resolve();
+                })
+            });
 
-                canvas.width = this.colorImage.width;
-                canvas.height = this.colorImage.height;
-
-                let mRGBA;
-                let cRGBA;
-
-                let monochromePromise = new Promise((resolve) => {
-                    // this.monochromeImage.addEventListener('load', () => {
-                    //     ctx.drawImage(this.monochromeImage, 0, 0);
-                    //     const imageData = ctx.getImageData(0, 0, this.monochromeImage.width, this.monochromeImage.height);
-                    //     console.log(imageData);
-                    //     mRGBA = imageData.data;
-                    //     ctx.clearRect(0, 0, this.monochromeImage.width, this.monochromeImage.height);
-                    //     resolve();
-                    // });
-                    // this.monochromeImage.onload = () => {
-                    //     //mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
-                    //     this.getDataOfImage(ctx, this.monochromeImage).then((rgba) => {
-                    //         mRGBA = rgba;
-                    //         resolve();
-                    //     });
-                    // };
-                    //this.monochromeImage.src = `./images/${this.name}-monochrome.png`;
-                    this.monochromeImage.addEventListener('load', () => {
-                        mRGBA = this.getDataOfImage(ctx, this.monochromeImage);
-                        resolve();
-                    })
+            let colorPromise = new Promise((resolve) => {
+                // this.colorImage.addEventListener('load', () => {
+                //     ctx.drawImage(this.colorImage, 0, 0);
+                //     const imageData = ctx.getImageData(0, 0, this.colorImage.width, this.colorImage.height);
+                //     console.log(imageData);
+                //     cRGBA = imageData.data;
+                //     ctx.clearRect(0, 0, this.colorImage.width, this.colorImage.height);
+                //     resolve();
+                // });
+                // this.colorImage.onload = () => {
+                //     //cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                //     this.getDataOfImage(ctx, this.colorImage).then((rgba) => {
+                //         cRGBA = rgba;
+                //         resolve();
+                //     });
+                // };
+                // this.colorImage.src = `./images/${this.name}-color.png`;
+                this.colorImage.addEventListener('load', () => {
+                    cRGBA = this.getDataOfImage(ctx, this.colorImage);
+                    resolve();
                 });
+            });
 
-                let colorPromise = new Promise((resolve) => {
-                    // this.colorImage.addEventListener('load', () => {
-                    //     ctx.drawImage(this.colorImage, 0, 0);
-                    //     const imageData = ctx.getImageData(0, 0, this.colorImage.width, this.colorImage.height);
-                    //     console.log(imageData);
-                    //     cRGBA = imageData.data;
-                    //     ctx.clearRect(0, 0, this.colorImage.width, this.colorImage.height);
-                    //     resolve();
-                    // });
-                    // this.colorImage.onload = () => {
-                    //     //cRGBA = this.getDataOfImage(ctx, this.colorImage);
-                    //     this.getDataOfImage(ctx, this.colorImage).then((rgba) => {
-                    //         cRGBA = rgba;
-                    //         resolve();
-                    //     });
-                    // };
-                    // this.colorImage.src = `./images/${this.name}-color.png`;
-                    this.colorImage.addEventListener('load', () => {
-                        cRGBA = this.getDataOfImage(ctx, this.colorImage);
-                        resolve();
-                    });
-                });
+            Promise.all([monochromePromise, colorPromise]).then(() => {
+                let blockWidth = this.canvasWidth / this.colorImage.width;
+                let blockHeight = this.canvasHeight / this.colorImage.height;
 
-                Promise.all([monochromePromise, colorPromise]).then(() => {
-                    let blockWidth = this.canvasWidth / this.colorImage.width;
-                    let blockHeight = this.canvasHeight / this.colorImage.height;
+                for(let a = 0; a < this.colorImage.width; a++) {
+                    let blockRow = [];
+            
+                    for(let b = 0; b < this.colorImage.height; b++) {
+                        // Checks if pixel is filled in
+                        let filled = mRGBA[((this.monochromeImage.width * a) + b) * 4] == 0;
+                        let completeColor = "0x";
 
-                    for (let a = 0; a < this.colorImage.width; a++) {
-                        let blockRow = [];
+                        for(let c = 0; c < 3; c++)
+                            completeColor += cRGBA[((this.colorImage.width * a) + b) * 4 + c].toString(16).padStart(2, "0");
 
-                        for (let b = 0; b < this.colorImage.height; b++) {
-                            // Checks if pixel is filled in
-                            let filled = mRGBA[((this.monochromeImage.width * a) + b) * 4] == 0;
-                            let completeColor = "0x";
-
-                            for (let c = 0; c < 3; c++)
-                                completeColor += cRGBA[((this.colorImage.width * a) + b) * 4 + c].toString(16).padStart(2, "0");
-
-                            let block = new PixelBlock(filled, completeColor, (blockWidth * b), (blockHeight * a), blockWidth, blockHeight);
-                            blockRow.push(block);
-                        }
-
-                        this.blocks.push(blockRow);
+                        let block = new PixelBlock(filled, completeColor, (blockWidth * b), (blockHeight * a), blockWidth, blockHeight);
+                        blockRow.push(block);
                     }
+            
+                    this.blocks.push(blockRow);
+                }
 
-                    // Copy-pasted section from generatePuzzle()
-                    // Handle the numbers for the rows first
-                    for (let a = 0; a < this.blocks.length; a++) {
-                        let currentRow = this.blocks[a];
-                        let rowHints = [];
-                        let consecutiveBlocks = 0;
+                // Copy-pasted section from generatePuzzle()
+                // Handle the numbers for the rows first
+                for(let a = 0; a < this.blocks.length; a++) {
+                    let currentRow = this.blocks[a];
+                    let rowHints = [];
+                    let consecutiveBlocks = 0;
 
-                        for (let b = 0; b < currentRow.length; b++) {
-                            if (currentRow[b].filled)
-                                consecutiveBlocks++;
+                    for(let b = 0; b < currentRow.length; b++) {
+                        if(currentRow[b].filled)
+                            consecutiveBlocks++;
 
-                            else if (consecutiveBlocks > 0) {
-                                rowHints.push(consecutiveBlocks);
-                                consecutiveBlocks = 0;
-                            }
-                        }
-
-                        if (consecutiveBlocks > 0 || rowHints.length == 0)
+                        else if(consecutiveBlocks > 0) {
                             rowHints.push(consecutiveBlocks);
-
-                        this.puzzleRows.push(rowHints);
-                    }
-
-                    // Handles the numbers for the columns
-                    for (let a = 0; a < this.blocks[0].length; a++) {
-                        let columnHints = [];
-                        let consecutiveBlocks = 0;
-
-                        for (let b = 0; b < this.blocks.length; b++) {
-                            if (this.blocks[b][a].filled)
-                                consecutiveBlocks++;
-
-                            else if (consecutiveBlocks > 0) {
-                                columnHints.push(consecutiveBlocks);
-                                consecutiveBlocks = 0;
-                            }
+                            consecutiveBlocks = 0;
                         }
-
-                        if (consecutiveBlocks > 0 || columnHints.length == 0)
-                            columnHints.push(consecutiveBlocks);
-
-                        this.puzzleColumns.push(columnHints);
                     }
 
-                    resolve(this);
-                });
+                    if(consecutiveBlocks > 0 || rowHints.length == 0) 
+                        rowHints.push(consecutiveBlocks);
+
+                    this.puzzleRows.push(rowHints);
+                }
+
+                // Handles the numbers for the columns
+                for(let a = 0; a < this.blocks[0].length; a++) {
+                    let columnHints = [];
+                    let consecutiveBlocks = 0;
+
+                    for(let b = 0; b < this.blocks.length; b++) {
+                        if(this.blocks[b][a].filled)
+                            consecutiveBlocks++;
+                        
+                        else if(consecutiveBlocks > 0) {
+                            columnHints.push(consecutiveBlocks);
+                            consecutiveBlocks = 0;
+                        }
+                    }
+
+                    if(consecutiveBlocks > 0 || columnHints.length == 0) 
+                    columnHints.push(consecutiveBlocks);
+
+                    this.puzzleColumns.push(columnHints);
+                }
+
+                resolve(this);
             });
         });
     }
 
     resetPuzzle() {
-        for (let a = 0; a < this.blocks.length; a++) {
-            for (let b = 0; b < this.blocks[a].length; b++) {
+        for(let a = 0; a < this.blocks.length; a++) {
+            for(let b = 0; b < this.blocks[a].length; b++) {
                 this.blocks[a][b].interactive = true;
                 this.blocks[a][b].selected = false;
                 this.blocks[a][b].displayColor = 0xFFFFFF;
