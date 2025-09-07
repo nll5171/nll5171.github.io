@@ -16,3 +16,10 @@
     </div>
   </footer>
 </template>
+
+<style scoped>
+footer {
+  position: relative;
+  bottom: 0;
+}
+</style>

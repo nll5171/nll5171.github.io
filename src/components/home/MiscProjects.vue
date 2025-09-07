@@ -10,52 +10,74 @@ import CardItem from './CardItem.vue'
     :id="`web-projects`"
   >
     <CardItem
-      :title="`Looking for Group`"
+      :title="`Evolution of Meter-Build in Under Night In-Birth`"
       :year="`Spring 2025`"
-      :subtitle="`Golisano College of Computing & Information Sciences`"
-      :img="`lfg-homepage.png`"
-      :url="`looking-for-group`"
+      :img="`uni-meterbuild-thumbnail.png`"
+      :url="`uni-meterbuild`"
     >
       <p class="card-text">
-        A fullstack web application designed to serve as a database for student-led projects at the
-        Rochester Institute of Technology.
-      </p>
-      <p class="card-text">
-        Primarily responsible for implementing the homepage, search functionality, filter and tag
-        system, user settings, and additional touch-ups to page layouts.
+        A video discussing the adjustments to meter gain throughout every revision of fighting game
+        Under Night In-Birth, from 2012 to May 2025.
       </p>
     </CardItem>
 
     <CardItem
-      :title="`Internet Scavenger Hunt`"
-      :year="`Fall 2024`"
-      :subtitle="`Rich Media Web Application Development II`"
-      :img="`scavenger-hunt-explore.png`"
-      :url="`scavenger-hunt`"
+      :title="`The Evolution of Hyde 66C in Under Night In-Birth`"
+      :year="`Summer 2024`"
+      :img="`hyde-66c-thumbnail.jpg`"
+      :url="`hyde-66c-history`"
     >
       <p class="card-text">
-        A solo project developing a full-stack web application designed for users to create, host,
-        and participate in scavenger hunts, specifically for exploring websites and videos.
-      </p>
-      <p class="card-text">
-        The site used a MongoDB back-end and a React front-end, alongside Bootstrap.
+        A video detailing the changes made to Hyde's 66C attack throughout every revision of
+        fighting game Under Night In-Birth, from 2012 to July 2024.
       </p>
     </CardItem>
 
     <CardItem
-      :title="`Picross`"
-      :year="`Fall 2022`"
-      :subtitle="`Intro to Game Web Tech`"
-      :img="`picross.png`"
-      :url="`picross`"
+      :title="`JoJo's and Damage Calculation`"
+      :year="`Winter 2022`"
+      :img="`damage-calculation-hftf-thumbnail.jpg`"
+      :url="`hftf-damage-calculation`"
     >
       <p class="card-text">
-        A solo project done in only a few days as the final for the class. Selects a random 16x16
-        NES character to generate from several options, such as Mario, Kirby, and Mega Man.
+        A code analysis video regarding the systems involved in damage calculation inside Capcom's
+        1999 fighting game JoJo's Bizarre Adventure: Heritage for the Future.
       </p>
+    </CardItem>
+
+    <CardItem
+      :title="`Launching and Teching in JoJo's`"
+      :year="`Winter 2021`"
+      :img="`launching-hftf-thumbnail.jpg`"
+      :url="`hftf-launching-teching`"
+    >
       <p class="card-text">
-        Sound effects and music were added to improve the experience, and the grid is designed to
-        scale in size based on screen dimensions.
+        A code analysis video regarding the systems involved in damage calculation inside Capcom's
+        1999 fighting game JoJo's Bizarre Adventure: Heritage for the Future.
+      </p>
+    </CardItem>
+
+    <CardItem
+      :title="`JoJo's and Infinite Prevention`"
+      :year="`Fall 2021`"
+      :img="`hftf-ips-thumbnail.jpg`"
+      :url="`hftf-ips`"
+    >
+      <p class="card-text">
+        An in-depth code analysis video discussing the Infinite Prevention System (IPS) used by
+        JoJo's Bizarre Adventure: Heritage for the Future, to prevent infinite combos.
+      </p>
+    </CardItem>
+
+    <CardItem
+      :title="`CPS-3 ROM Conversion Tool`"
+      :year="`Spring 2020`"
+      :img="`combined-split-2.png`"
+      :url="`rom-conversion`"
+    >
+      <p class="card-text">
+        A tool programmed in Java to convert CPS-3 ROMs between the two formats used by emulation
+        software: the combined ROM format, and the split ROM format.
       </p>
     </CardItem>
   </SectionComponent>

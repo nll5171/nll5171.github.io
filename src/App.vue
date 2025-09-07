@@ -10,7 +10,7 @@ import FooterComponent from './components/FooterComponent.vue'
       { title: 'About Me', path: '/#about-me' },
       { title: 'Web Development Projects', path: '/#web-projects' },
       { title: 'Game Development Projects', path: '/#game-projects' },
-      { title: 'Mischellaneous Projects', path: '#/misc-projects' },
+      { title: 'Miscellaneous Projects', path: '#/misc-projects' },
       { title: 'Resume', path: '/assets/Nick_Lang_CV.pdf' },
       { title: 'Contact', path: '/#contact' },
     ]"
