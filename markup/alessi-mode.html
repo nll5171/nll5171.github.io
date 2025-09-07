@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <div class="container text-light mt-md-4 mb-md-4 project-container">
+    <div class="row text-center heading project-header">
+      <div class="col py-3 px-2 px-md-5">
+        <h1>Heritage for the Future: Alessi Mode</h1>
+      </div>
+    </div>
+    <div class="row text-section project-content">
+      <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/img/alessi-mode.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Alessi mode romhack gameplay"
+              />
+            </div>
+            <div class="carousel-item ratio" style="--bs-aspect-ratio: calc(7 / 12 * 100%)">
+              <iframe
+                src="https://www.youtube.com/embed/d2eEWN16CG4"
+                class="d-block w-100 rounded-2 border"
+                title="Rainbow Edition Revision 2 Release"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <p class="pt-2">
+          This was a romhack created in the summer of 2019 in order to replicate the Alessi mode
+          present in the Dreamcast release of JoJo’s Bizarre Adventure: Heritage for the Future. The
+          playable character Alessi has a move that allows him to transform characters into weaker
+          versions of themselves temporarily (typically this transforms them into children, but not
+          exclusively). Alessi mode has both characters fight in this state for the entire duration
+          of the match.
+        </p>
+        <p class="pt-2">The changes themselves were fairly simple:</p>
+        <div>
+          <ol>
+            <li>Have Alessi mode transformation begin at roundstart</li>
+            <li>Remove the Alessi mode transformation timer, so that it never ends</li>
+            <li>Reduce the number of rounds to always be 1</li>
+          </ol>
+        </div>
+        <p class="pt-2">
+          Each of these changes only required a byte or two to be changed, with the main challenge
+          being finding the location of what needed to be changed.
+        </p>
+        <p class="pt-2">
+          When a match is initialized, a set of RAM addresses for each player are set to a default
+          value of 0. By changing one of these RAM addresses to store the value that triggers the
+          Alessi mode transformation, I was able to get the first, and most important, part
+          completed.
+        </p>
+        <p class="pt-2">
+          After that, I used Final Burn Alpha’s RAM watch tool to identify what RAM address stored
+          the Alessi mode timer. After that, I went into Mame Debugger and removed the check that
+          would return the player to normal once initiated.
+        </p>
+        <p class="pt-2">
+          Finally,I repeated that process for the rounds required to win, as this is 2 by default
+          and can be adjusted. Once done, I hardcoded the value to always be 1.
+        </p>
+      </div>
+    </div>
+  </div>
+</html>
