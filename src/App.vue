@@ -10,7 +10,7 @@ import NavbarComponent from './components/NavbarComponent.vue'
       { title: 'Web Development Projects', path: '/#web-projects' },
       { title: 'Game Development Projects', path: '/#game-projects' },
       { title: 'Miscellaneous Projects', path: '/#misc-projects' },
-      { title: 'Resume', path: 'src/assets/Nick_Lang_CV.pdf', type: 'external' },
+      { title: 'Resume', path: 'Nick_Lang_CV.pdf', type: 'external' },
       { title: 'Contact', path: '/#contact' },
     ]"
   />
