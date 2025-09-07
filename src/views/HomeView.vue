@@ -28,7 +28,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
                 <div class="px-md-5 text-center">
                   <figure class="figure text-center">
                     <img
-                      src="../assets/img/nick.png"
+                      src="/img/nick.png"
                       alt="A photo of myself"
                       class="figure-img img-fluid img-thumbnail rounded"
                     />
@@ -83,7 +83,7 @@ import FooterComponent from '@/components/FooterComponent.vue'
               <div class="px-lg-1 px-xxl-5 text-center">
                 <figure class="figure text-center">
                   <img
-                    src="../assets/img/nick.png"
+                    src="/img/nick.png"
                     alt="A photo of myself"
                     class="figure-img img-fluid img-thumbnail rounded"
                   />

@@ -18,7 +18,7 @@ const route = useRoute()
 
 onBeforeMount(async () => {
   // Get page
-  const res = await fetch(`../src/components/projects/markup/${route.params.name}.html`)
+  const res = await fetch(`/markup/${route.params.name}.html`)
   const text = await res.text()
   content.value = text
 })

@@ -10,6 +10,22 @@ import CardItem from './CardItem.vue'
     :id="`web-projects`"
   >
     <CardItem
+      :title="`Ignite-Boost.net`"
+      :year="`Summer 2025`"
+      :img="`ignite-boost-redesign-gallery.png`"
+      :url="`ignite-boost`"
+    >
+      <p class="card-text">
+        A fullstack MEAN application designed to serve as a video database for the fighting game
+        Dengeki Bunko Fighting Climax, where players can watch and submit matches.
+      </p>
+      <p class="card-text">
+        Migrated front-end from React and Bootstrap to Angular Material with TailwindCSS. Redesigned
+        it as well to match the game's visual identity.
+      </p>
+    </CardItem>
+
+    <CardItem
       :title="`Looking for Group`"
       :year="`Spring 2025`"
       :subtitle="`Golisano College of Computing & Information Sciences`"
@@ -39,6 +55,22 @@ import CardItem from './CardItem.vue'
       </p>
       <p class="card-text">
         The site used a MongoDB back-end and a React front-end, alongside Bootstrap.
+      </p>
+    </CardItem>
+
+    <CardItem
+      :title="`Portfolio`"
+      :year="`Summer 2023`"
+      :img="`portfolio-homepage.png`"
+      :url="`portfolio`"
+    >
+      <p class="card-text">
+        The very portfolio you're viewing now. A collection of all sorts of projects I've worked on,
+        whether web dev related, game dev related, or something in-between.
+      </p>
+      <p class="card-text">
+        Initially developed as a series of static Bootstrap pages, and later converted into a
+        Single-Page Vue application.
       </p>
     </CardItem>
 
