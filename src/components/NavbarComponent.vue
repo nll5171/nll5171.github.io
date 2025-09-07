@@ -29,9 +29,3 @@ defineProps({
     </div>
   </nav>
 </template>
-
-<style scoped>
-.navbar {
-  background-color: var(--nav-color);
-}
-</style>
