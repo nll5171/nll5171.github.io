@@ -7,7 +7,7 @@ import CardItem from './CardItem.vue'
   <SectionComponent
     :title="`Miscellaneous Projects`"
     :subtitle="`Check each card for a brief description. Click on that card to read more about the project.`"
-    :id="`web-projects`"
+    :id="`misc-projects`"
   >
     <CardItem
       :title="`Evolution of Meter-Build in Under Night In-Birth`"

@@ -18,6 +18,18 @@ const router = createRouter({
       component: () => import('../views/ProjectView.vue'),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return { el: to.hash }
+    }
+
+    return (
+      savedPosition ||
+      new Promise((resolve) => {
+        setTimeout(() => resolve({ top: 0 }), 300)
+      })
+    )
+  },
 })
 
 export default router
