@@ -20,16 +20,14 @@ const router = createRouter({
   ],
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      return { el: to.hash }
+      return new Promise((resolve) => {
+        setTimeout(() => resolve({ el: to.hash }), 300)
+      })
     }
 
-    // return (
-    //   savedPosition ||
-    //   new Promise((resolve) => {
-    //     setTimeout(() => resolve({ top: 0 }), 300)
-    //   })
-    // )
-    return savedPosition || { top: 0 }
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(savedPosition || { top: 0 }), 300)
+    })
   },
 })
 
