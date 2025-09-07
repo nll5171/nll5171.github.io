@@ -3,6 +3,7 @@ import SkillsSection from '@/components/home/SkillsSection.vue'
 import WebProjects from '@/components/home/WebProjects.vue'
 import GameProjects from '@/components/home/GameProjects.vue'
 import MiscProjects from '@/components/home/MiscProjects.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 </script>
 
 <template>
@@ -27,7 +28,7 @@ import MiscProjects from '@/components/home/MiscProjects.vue'
                 <div class="px-md-5 text-center">
                   <figure class="figure text-center">
                     <img
-                      src="./assets/nick.png"
+                      src="../assets/img/nick.png"
                       alt="A photo of myself"
                       class="figure-img img-fluid img-thumbnail rounded"
                     />
@@ -99,4 +100,5 @@ import MiscProjects from '@/components/home/MiscProjects.vue'
     <GameProjects />
     <MiscProjects />
   </main>
+  <FooterComponent />
 </template>

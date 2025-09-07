@@ -11,7 +11,7 @@ import IconItem from './IconItem.vue'
   >
     <IconItem :icon="`devicon-react-original-wordmark`" :href="`https://react.dev/`"></IconItem>
     <IconItem :icon="`devicon-angularjs-plain`" :href="`https://angular.dev/`"></IconItem>
-    <IconItem :icon="`devicon-vuejs-plain`" :href="`https://doc.vueframework.com/`"></IconItem>
+    <IconItem :icon="`devicon-vuejs-plain`" :href="`https://vuejs.org/`"></IconItem>
     <IconItem :icon="`devicon-nodejs-plain-wordmark`" :href="`https://nodejs.org/`"></IconItem>
     <IconItem
       :icon="`devicon-express-original-wordmark`"

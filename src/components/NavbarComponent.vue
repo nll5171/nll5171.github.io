@@ -18,11 +18,16 @@ defineProps({
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
-      ></button>
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li v-for="option in options" :key="option.title" class="nav-item">
-            <RouterLink :to="`${option.path}`" class="nav-link">{{ option.title }}</RouterLink>
+            <RouterLink v-if="!option.type" :to="`${option.path}`" class="nav-link">{{
+              option.title
+            }}</RouterLink>
+            <a v-else :href="`${option.path}`" class="nav-link">{{ option.title }}</a>
           </li>
         </ul>
       </div>

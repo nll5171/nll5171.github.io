@@ -13,7 +13,7 @@ const router = createRouter({
       path: '/projects/:name',
       name: 'projects',
       // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
+      // this generates a separate chunk for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/ProjectView.vue'),
     },
@@ -23,12 +23,13 @@ const router = createRouter({
       return { el: to.hash }
     }
 
-    return (
-      savedPosition ||
-      new Promise((resolve) => {
-        setTimeout(() => resolve({ top: 0 }), 300)
-      })
-    )
+    // return (
+    //   savedPosition ||
+    //   new Promise((resolve) => {
+    //     setTimeout(() => resolve({ top: 0 }), 300)
+    //   })
+    // )
+    return savedPosition || { top: 0 }
   },
 })
 

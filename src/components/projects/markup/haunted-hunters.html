@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <div class="container text-light mt-md-4 mb-md-4 project-container">
+    <div class="row text-center heading project-header">
+      <div class="col py-3 px-2 px-md-5">
+        <h1>Haunted Hunters</h1>
+      </div>
+    </div>
+    <div class="row text-section project-content">
+      <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+        <!-- <img src="../src/assets/img/haunted-hunters.png" class="img-fluid rounded-2 border" alt="Haunted Hunters"> -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../src/assets/img/haunted-hunters.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Haunted Hunters Title"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../src/assets/img/haunted-hunters-gameplay.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Haunted Hunters Title"
+              />
+            </div>
+            <div class="carousel-item ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/T_KFFcRpUQo"
+                class="d-block w-100 rounded-2 border"
+                title="Game Trailer V2"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <p class="pt-2">
+          Haunted Hunters was a Unity project developed in a group of 3 during my Junior year in
+          RIT’s Game Design & Development program, and was created for the Casual Game Development
+          class I took during the latter half of the academic year.
+        </p>
+        <p>
+          Since the goal was to create a game targeted towards more casual audiences, one focused on
+          short play sessions, we decided to create an endless runner game in a similar vein to
+          Jetpack Joyride and Subway Surfers.
+        </p>
+        <p>
+          Our game involves avoiding enemies and obstacles by switching between the 3 available
+          lanes open to the player. Yellow collectibles are spawned randomly alongside obstacles and
+          enemies that serve as ammunition that can be fired at enemies and obstacles to destroy
+          them.
+        </p>
+        <p>
+          The game would progressively increase in speed the further along you went, in order to
+          ramp up the difficulty and keep things interesting. We also included the ability to begin
+          at a faster speed right off the bat, providing an increased score modifier based on your
+          starting speed to compensate for the higher starting difficulty.
+        </p>
+        <!-- <p>Overall, the project was kept quite simple in scope due to all of us struggling with heavy
+                        amounts of work in our other classes. The core gameplay loop did not change from what we had
+                        initially designed, though we did make several adjustments to player movement, scoring, and
+                        obstacle spawning based on player feedback.</p>
+                    <p>Our largest difficulty with this project was time management, where each of us struggled to find
+                        the opportunity to get this project done outside of the few hours we were all free to meet,
+                        which didn’t give us a lot of time to discuss changes before our sprints.</p>
+                    <p>We also ran into a lot of trouble with making the movement feel good, as we intended to have a
+                        delay between switching lanes from the player character jumping/falling between them. Despite
+                        our several attempts, we couldn’t find a speed (fixed or responsive) that felt great to players,
+                        and shifted to switching lanes instantly towards the tail end of the project.</p> -->
+        <p>
+          I was primarily responsible for the game loop, player movement, speed adjustment, scoring,
+          and later went on to revise the system we had for spawning to adjust the percentage
+          chances for objects spawned as the distance traveled increased, in another attempt to
+          increase the difficulty.
+        </p>
+      </div>
+    </div>
+  </div>
+</html>

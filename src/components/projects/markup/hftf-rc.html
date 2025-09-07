@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <div class="container text-light mt-md-4 mb-md-4 project-container">
+    <div class="row text-center heading project-header">
+      <div class="col py-3 px-2 px-md-5">
+        <h1>Heritage for the Future: Roman Cancel Romhack</h1>
+      </div>
+    </div>
+    <div class="row text-section project-content">
+      <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../src/assets/img/roman-cancel.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Roman Cancel Romhack gameplay"
+              />
+            </div>
+            <div class="carousel-item ratio" style="--bs-aspect-ratio: calc(7 / 12 * 100%)">
+              <iframe
+                src="https://www.youtube.com/embed/8ok8HFdvd3I"
+                class="d-block w-100 rounded-2 border"
+                title="Roman Cancel Romhack Combo Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <p class="pt-2">
+          This was a romhack of JoJo’s Bizarre Adventure: Heritage for the Future I created in the
+          fall of 2021 prior to my start at RIT. The Roman Cancel is a technique from the Guilty
+          Gear series of fighting games in which an individual can spend resources to cancel one of
+          their actions and return to an actionable state. As a fan of that series, I wanted to see
+          if I would be able to recreate that mechanic within this game.
+        </p>
+        <p class="pt-2">
+          To achieve this, I utilized a debugging tool to trace through the game’s subroutines in
+          order to find one that was capable of returning the player to a neutral state, and the
+          requirements for the player to be considered in one. Likewise, I also needed to find the
+          subroutines responsible for playing sound effects and displaying visual effects on screen,
+          in order to provide visual and auditory feedback.
+        </p>
+        <p class="pt-2">
+          With the preliminary research completed, I then proceeded to jump to empty ROM space and
+          inject custom assembly in the routine that normally begins with the check for special move
+          inputs. I rerouted the instruction to jump to that routine to instead go towards my custom
+          assembly, then the special move input routine afterwards, before finally returning to
+          where it was initially.
+        </p>
+        <p class="pt-2">
+          I ran into a few issues during this process that required some additional work. This game
+          allows you to switch between two states at will: Stand On and Stand Off, which change the
+          attacks you're able to perform, as well as some of your movement options. While my initial
+          code worked for the Stand Off state, it did not work for the Stand On state. As such, I
+          needed to write additional custom assembly to have it work for both.
+        </p>
+        <p class="pt-2">
+          The end result is a little buggy, as the game was never designed around being able to do
+          this, but for the most part, it functions as intended. I was even able to get the romhack
+          to have its own lobby on FightCade, a software client to play arcade titles online using
+          rollback netcode.
+        </p>
+      </div>
+    </div>
+  </div>
+</html>

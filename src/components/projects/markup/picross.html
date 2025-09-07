@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <div class="container text-light mt-md-4 mb-md-4 project-container">
+    <div class="row text-center heading project-header">
+      <div class="col py-3 px-2 px-md-5">
+        <h1>Picross</h1>
+      </div>
+    </div>
+    <div class="row text-section project-content">
+      <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-theme="dark"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../src/assets/img/picross-blank.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Incomplete Picross Puzzle"
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="../src/assets/img/picross.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Completed Picross Puzzle"
+              />
+            </div>
+            <div class="carousel-item ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/lhFt1pmXMxY"
+                class="d-block w-100 rounded-2 border"
+                title="IGME 235 Picross"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <p class="pt-2 text-center">
+          Try out the project <a href="../src/components/projects/picross/">here!</a>
+        </p>
+        <p class="pt-2">
+          This was my final project created in the Intro to Game Web Tech class I took during the
+          first half of my 2nd year in RIT’s Game Design & Development program. Since our time was
+          limited to only a few days to create a simple game using pixi.js, I felt Picross would be
+          simple, albeit engaging enough to suffice.
+        </p>
+        <p class="pt-2">
+          I used bootstrap to handle the layout of the website, though the creation of the board was
+          entirely custom. One of five possible 16x16 puzzles is selected for the player to attempt,
+          with each puzzle being the sprite of a NES character, those being Mario, Link, Kirby,
+          Goomba, and Waddle Dee respectively.
+        </p>
+        <p class="pt-2">
+          Though the only puzzles that exist are 16x16, the code written supports puzzles of any
+          given size, as it takes black and white images and converts them into individual tiles.
+          Being able to convert the images into the format necessary to read them and convert them
+          into tiles was the biggest hurdle, as images normally load asynchronously, and I needed
+          them properly loaded prior to creating the board. In the end, I just needed to better
+          utilize promises in order to achieve that.
+        </p>
+        <p class="pt-2">
+          Ultimately, this was a simple, albeit challenging project all the same. What I needed to
+          do was simple, it was merely getting to that point that proved difficult at times. In
+          spite of that, I was happy to be able to create this, as I’m an avid fan of picross.
+        </p>
+      </div>
+    </div>
+  </div>
+</html>

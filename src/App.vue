@@ -1,7 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import NavbarComponent from './components/NavbarComponent.vue'
-import FooterComponent from './components/FooterComponent.vue'
 </script>
 
 <template>
@@ -11,14 +10,11 @@ import FooterComponent from './components/FooterComponent.vue'
       { title: 'Web Development Projects', path: '/#web-projects' },
       { title: 'Game Development Projects', path: '/#game-projects' },
       { title: 'Miscellaneous Projects', path: '/#misc-projects' },
-      { title: 'Resume', path: '/assets/Nick_Lang_CV.pdf' },
+      { title: 'Resume', path: 'src/assets/Nick_Lang_CV.pdf', type: 'external' },
       { title: 'Contact', path: '/#contact' },
     ]"
   />
-  <transition name="fade" mode="out-in">
-    <RouterView />
-  </transition>
-  <FooterComponent />
+  <RouterView />
 </template>
 
 <style scoped>

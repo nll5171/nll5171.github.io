@@ -1,0 +1,48 @@
+#page-title {
+    background-color: #778899;
+    color: white;
+}
+
+#instructions {
+    border-right: 1px solid rgba(0,0,0,.1);
+    top: 4rem;
+    position: sticky;
+    height: calc(100vh - 4rem);
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.credits {
+    text-align: center;
+}
+
+#column-table tr {
+    display: flex;
+    align-items: flex-end;
+}
+
+#column-table td {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#row-table tr {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#row-table td {
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#row-table p {
+    text-align: right;
+    margin: 0 1em;
+}
