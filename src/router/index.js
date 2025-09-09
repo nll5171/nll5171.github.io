@@ -20,6 +20,9 @@ const router = createRouter({
   ],
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
+      // No transition, scroll immediately
+      if (to.name === from.name) return { el: to.hash }
+
       return new Promise((resolve) => {
         setTimeout(() => resolve({ el: to.hash }), 350)
       })
