@@ -1,9 +1,19 @@
 <script setup>
+import { onBeforeMount } from 'vue'
+import { useRoute } from 'vue-router'
 import SkillsSection from '@/components/home/SkillsSection.vue'
 import WebProjects from '@/components/home/WebProjects.vue'
 import GameProjects from '@/components/home/GameProjects.vue'
 import MiscProjects from '@/components/home/MiscProjects.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
+
+const route = useRoute()
+
+onBeforeMount(() => {
+  console.log(route.hash)
+
+  if (route.hash) location.hash = route.hash
+})
 </script>
 
 <template>
