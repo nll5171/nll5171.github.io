@@ -17,7 +17,24 @@ import NavbarComponent from './components/NavbarComponent.vue'
   <router-view v-slot="{ Component, route }">
     <transition name="fade" mode="out-in">
       <div :key="route.name">
-        <component :is="Component" />
+        <Suspense>
+          <component :is="Component" />
+          <template #fallback>
+            <div class="mt-4 mb-md-4 d-flex justify-content-center align-items-center">
+              <div
+                class="spinner-border text-light"
+                style="
+                  --bs-spinner-width: 10rem;
+                  --bs-spinner-height: 10rem;
+                  --bs-spinner-border-width: 1.25em;
+                "
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </template>
+        </Suspense>
       </div>
     </transition>
   </router-view>

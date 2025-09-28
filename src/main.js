@@ -5,7 +5,8 @@ import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
-
 app.use(router)
 
+// mount after the initial navigation is ready
+await router.isReady()
 app.mount('#app')
