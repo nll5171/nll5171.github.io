@@ -19,17 +19,19 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
+    const delay = 350
+
     if (to.hash) {
       // No transition, scroll immediately
       if (to.name === from.name) return { el: to.hash }
 
       return new Promise((resolve) => {
-        setTimeout(() => resolve({ el: to.hash }), 350)
+        setTimeout(() => resolve({ el: to.hash }), delay)
       })
     }
 
     return new Promise((resolve) => {
-      setTimeout(() => resolve(savedPosition || { top: 0 }), 350)
+      setTimeout(() => resolve(savedPosition || { top: 0 }), delay)
     })
   },
 })

@@ -6,7 +6,7 @@ import IconItem from './IconItem.vue'
 <template>
   <SectionComponent
     :title="'Skills'"
-    :subtitle="`Shown below are some of the languages and tools I've had experience working with in the past:`"
+    :subtitle="`Shown below are some of the languages, frameworks, and tools I've had experience working with in the past:`"
     :id="`skills`"
   >
     <IconItem :icon="`devicon-react-original-wordmark`" :href="`https://react.dev/`"></IconItem>

@@ -1,6 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import NavbarComponent from './components/NavbarComponent.vue'
+import LoadingComponent from './components/LoadingComponent.vue'
 </script>
 
 <template>
@@ -20,19 +21,11 @@ import NavbarComponent from './components/NavbarComponent.vue'
         <Suspense>
           <component :is="Component" />
           <template #fallback>
-            <div class="mt-4 mb-md-4 d-flex justify-content-center align-items-center">
-              <div
-                class="spinner-border text-light"
-                style="
-                  --bs-spinner-width: 10rem;
-                  --bs-spinner-height: 10rem;
-                  --bs-spinner-border-width: 1.25em;
-                "
-                role="status"
-              >
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </div>
+            <LoadingComponent
+              :width="'10rem'"
+              :height="'10rem'"
+              :border-width="'1.25rem'"
+            ></LoadingComponent>
           </template>
         </Suspense>
       </div>
