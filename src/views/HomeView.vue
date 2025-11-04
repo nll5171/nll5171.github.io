@@ -10,8 +10,6 @@ import FooterComponent from '@/components/FooterComponent.vue'
 const route = useRoute()
 
 onBeforeMount(() => {
-  console.log(route.hash)
-
   if (route.hash) location.hash = route.hash
 })
 </script>
