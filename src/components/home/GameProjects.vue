@@ -113,7 +113,7 @@ import CardItem from './CardItem.vue'
       :title="`JoJo's Bizarre Adventure: HFTF Alessi Mode Hack`"
       :year="`Summer 2019`"
       :img="`alessi-mode.png`"
-      :url="`hftf-alessi`"
+      :url="`alessi-mode`"
     >
       <p class="card-text">
         A romhack created to replicate the "Alessi Mode" present in the Dreamcast version of JoJo's

@@ -39,7 +39,7 @@ import LoadingComponent from './components/LoadingComponent.vue'
   transition: opacity 0.3s;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }

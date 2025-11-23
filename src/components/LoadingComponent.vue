@@ -11,9 +11,9 @@ defineProps({
     <div
       class="spinner-border text-light"
       :style="{
-        '--bs-spinner-width': width,
-        '--bs-spinner-height': height,
-        '--bs-spinner-border-width': borderWidth,
+        '--bs-spinner-width': `${width}rem`,
+        '--bs-spinner-height': `${height}rem`,
+        '--bs-spinner-border-width': `${borderWidth}rem`,
       }"
       role="status"
     >

@@ -7,19 +7,15 @@ const route = useRoute()
 </script>
 
 <template>
-  <transition name="fade" mode="out-in">
+  <Transition name="fade" mode="out-in">
     <Suspense>
       <ProjectContent :project-name="route.params.name"></ProjectContent>
 
       <template #fallback>
-        <LoadingComponent
-          :width="'10rem'"
-          :height="'10rem'"
-          :border-width="'1.25rem'"
-        ></LoadingComponent>
+        <LoadingComponent :width="10" :height="10" :border-width="1.25"></LoadingComponent>
       </template>
     </Suspense>
-  </transition>
+  </Transition>
 </template>
 
 <style scoped>
@@ -28,7 +24,7 @@ const route = useRoute()
   transition: opacity 0.3s;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
