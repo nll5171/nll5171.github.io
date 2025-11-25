@@ -16,7 +16,7 @@ import LoadingComponent from './components/LoadingComponent.vue'
     ]"
   />
   <router-view v-slot="{ Component, route }">
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="out-in" appear>
       <div :key="route.name">
         <Suspense>
           <component :is="Component" />
