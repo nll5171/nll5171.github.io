@@ -7,8 +7,19 @@
   --light-blue: #88cefc;
   --lighter-blue: #90f6ff;
 
+  --nav-link-color: rgba(255, 255, 255, 0.67);
+  --nav-link-color-hover: rgba(255, 255, 255, 0.82);
+
   .navbar {
     background-color: var(--nav-color);
+
+    .nav-link {
+      color: var(--nav-link-color);
+    }
+
+    .nav-link:hover {
+      color: var(--nav-link-color-hover);
+    }
   }
 
   body {

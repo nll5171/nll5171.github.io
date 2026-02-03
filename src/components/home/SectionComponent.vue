@@ -12,7 +12,7 @@ defineProps({
       <div class="container text-light">
         <div class="row align-items-center">
           <div class="col pt-3 px-md-5">
-            <h1 :id="id" class="text-center">{{ title }}</h1>
+            <h2 :id="id" class="text-center h1">{{ title }}</h2>
             <p class="text-center">{{ subtitle }}</p>
           </div>
         </div>

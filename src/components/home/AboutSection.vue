@@ -6,7 +6,7 @@
         <div class="row d-flex align-items-center justify-content-center d-lg-none">
           <div class="col-12">
             <div class="py-3 px-2 px-md-5">
-              <h1 id="about-me">About Me</h1>
+              <h2 id="about-me" class="h1">About Me</h2>
               <p>
                 My name is Nicholas Lang, though I mainly go by Nick. I'm a recent graduate of RIT's
                 Game Design & Development program. I've loved games since I was a child and have
@@ -45,7 +45,7 @@
         <div class="row d-flex align-items-center justify-content-center d-none d-lg-flex">
           <div class="col-8">
             <div class="py-3 px-2 px-md-5">
-              <h1 id="about-me">About Me</h1>
+              <h2 id="about-me" class="h1">About Me</h2>
               <p>
                 My name is Nicholas Lang, though I mainly go by Nick. I'm a recent graduate of RIT's
                 Game Design & Development program. I've loved games since I was a child and have
