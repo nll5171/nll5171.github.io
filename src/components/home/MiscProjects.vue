@@ -10,6 +10,28 @@ import CardItem from './CardItem.vue'
     :id="`misc-projects`"
   >
     <CardItem
+      :title="`Throw Reject Miss in Under Night In-Birth`"
+      :year="`Winter 2026`"
+      :img="`uni-trm-thumbnail.png`"
+      :url="`uni-trm`"
+    >
+      <p class="card-text">
+        A video discussing changes to the throw reject miss mehcanic from the Under Night In-Birth.
+        Unlike before, this one focused on code analysis.
+      </p>
+    </CardItem>
+    <CardItem
+      :title="`Green Shields in Under Night In-Birth 2`"
+      :year="`Fall 2025`"
+      :img="`uni-greenshield-thumbnail.png`"
+      :url="`uni-greenshield`"
+    >
+      <p class="card-text">
+        A video discussing the fairly minor adjustments to the green shield mechanic from Under
+        Night In-Birth Exe:Late[cl-r] to Under Night In-Birth 2 Sys:Celes.
+      </p>
+    </CardItem>
+    <CardItem
       :title="`Evolution of Meter-Build in Under Night In-Birth`"
       :year="`Spring 2025`"
       :img="`uni-meterbuild-thumbnail.png`"
