@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <div class="container text-light mt-md-4 mb-md-4 project-container">
+    <div class="row text-center heading project-header">
+      <div class="col py-3 px-2 px-md-5">
+        <h1>Throw Reject Miss in Under Night In-Birth</h1>
+      </div>
+    </div>
+    <div class="row text-section project-content">
+      <div class="col pt-3 px-2 px-md-5 justify-content-center align-items-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/img/uni-trm-thumbnail.png"
+                class="d-block w-100 rounded-2 border"
+                alt="Throw Reject Miss in Under Night In-Birth thumbnail"
+              />
+            </div>
+            <div class="carousel-item ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/Gei4VrmS6k4"
+                class="d-block w-100 rounded-2 border"
+                title="Throw Reject Miss in Under Night In-Birth"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <p class="pt-2">
+          An in-depth code analysis on the <strong>throw reject miss</strong> mechanic in Under
+          Night In-Birth, and how it changed between different versions of the game. In particular,
+          the changes made between the Under Night In-Birth Exe:Late[cl-r] and Under Night In-Birth
+          2 Sys:Celes.
+        </p>
+        <p class="pt-2">
+          I'd recommend watching the video for a proper explanation of how this mechanic works but
+          essentially, when you input a throw, you cannot tech throws for a limited period of time.
+          The amount of time and situations where you would be unable to tech a throw changed
+          between the aforementioned games.
+        </p>
+        <p class="pt-2">
+          Going more into the creation of this project, I would argue it was a middle ground between
+          the last two in terms of how involved it was. Unlike with figuring out meter build, I did
+          not need to analyze assembly code, but I did need to do quite a bit more code analysis
+          than I did to understand what changed with the green shield mechanic. In the end however,
+          the changes were quite simple, it just took me a bit to understand what they were and how
+          everything fit together, given there were more moving parts to work with.
+        </p>
+        <p class="pt-2">
+          And unlike the previous two videos, I had decided that I would make the primary focus of
+          this video to be the code analysis. Ideally, I explained things well enough that the code
+          wasn't particularly difficult to figure out, but it's also pretty simple by itself. The
+          difficulty only comes into the picture when it came to working backwards in figuring out
+          how the system was implemented in the first place.
+        </p>
+      </div>
+    </div>
+  </div>
+</html>
