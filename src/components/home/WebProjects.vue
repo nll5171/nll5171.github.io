@@ -10,6 +10,21 @@ import CardItem from './CardItem.vue'
     :id="`web-projects`"
   >
     <CardItem
+      :title="`EarthCam Laravel Demo`"
+      :year="`Winter 2026`"
+      :img="`earth-cam-laravel-demo-home.png`"
+      :url="`earth-cam-demo`"
+    >
+      <p class="card-text">
+        A fullstack web application designed using React and Laravel to demonstrate my understanding
+        of the latter for a Jr. Backend Developer postion.
+      </p>
+      <p class="card-text">
+        The project has basic CRUD functionality and an authentication system. Styling was handled
+        through TailwindCSS and daisyUI. Hosted temporarily via Heroku.
+      </p>
+    </CardItem>
+    <CardItem
       :title="`Ignite-Boost.net`"
       :year="`Summer 2025`"
       :img="`ignite-boost-redesign-gallery.png`"
