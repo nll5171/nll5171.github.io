@@ -35,6 +35,16 @@ import IconItem from './IconItem.vue'
       :label="`Read more about express.js`"
     ></IconItem>
     <IconItem
+      :icon="`devicon-laravel-original`"
+      :href="`https://laravel.com/`"
+      :label="`Read more about Laravel`"
+    ></IconItem>
+    <IconItem
+      :icon="`devicon-mysql-original`"
+      :href="`https://www.mysql.com/`"
+      :label="`Read more about MySQL`"
+    ></IconItem>
+    <IconItem
       :icon="`devicon-mongodb-plain`"
       :href="`https://www.mongodb.com/`"
       :label="`Read more about MongoDB`"
@@ -50,11 +60,6 @@ import IconItem from './IconItem.vue'
       :label="`Read more about TailwindCSS`"
     ></IconItem>
     <IconItem
-      :icon="`devicon-cplusplus-plain`"
-      :href="`https://isocpp.org/`"
-      :label="`Read more about C plus plus`"
-    ></IconItem>
-    <IconItem
       :icon="`devicon-csharp-plain`"
       :href="`https://dotnet.microsoft.com/en-us/languages/csharp`"
       :label="`Read more about C sharp`"
@@ -63,11 +68,6 @@ import IconItem from './IconItem.vue'
       :icon="`devicon-java-plain-wordmark`"
       :href="`https://www.java.com/en/`"
       :label="`Read more about Java`"
-    ></IconItem>
-    <IconItem
-      :icon="`devicon-unity-plain`"
-      :href="`https://unity.com/`"
-      :label="`Read more about Unity`"
     ></IconItem>
   </SectionComponent>
 </template>
