@@ -15,7 +15,7 @@ import IconItem from './IconItem.vue'
       :label="`Read more about React.js`"
     ></IconItem>
     <IconItem
-      :icon="`devicon-angularjs-plain`"
+      :icon="`devicon-angular-plain`"
       :href="`https://angular.dev/`"
       :label="`Read more about Angular`"
     ></IconItem>
@@ -40,6 +40,11 @@ import IconItem from './IconItem.vue'
       :label="`Read more about Laravel`"
     ></IconItem>
     <IconItem
+      :icon="`devicon-java-plain-wordmark`"
+      :href="`https://www.java.com/en/`"
+      :label="`Read more about Java`"
+    ></IconItem>
+    <IconItem
       :icon="`devicon-mysql-original`"
       :href="`https://www.mysql.com/`"
       :label="`Read more about MySQL`"
@@ -60,14 +65,39 @@ import IconItem from './IconItem.vue'
       :label="`Read more about TailwindCSS`"
     ></IconItem>
     <IconItem
+      :icon="`devicon-tauri-plain`"
+      :href="`https://jestjs.io/`"
+      :label="`Read more about Jest`"
+    ></IconItem>
+    <IconItem
+      :icon="`devicon-jest-plain`"
+      :href="`https://tauri.app/`"
+      :label="`Read more about Tauri`"
+    ></IconItem>
+    <IconItem
       :icon="`devicon-csharp-plain`"
       :href="`https://dotnet.microsoft.com/en-us/languages/csharp`"
       :label="`Read more about C sharp`"
     ></IconItem>
     <IconItem
-      :icon="`devicon-java-plain-wordmark`"
-      :href="`https://www.java.com/en/`"
-      :label="`Read more about Java`"
+      :icon="`devicon-unity-plain`"
+      :href="`https://unity.com/`"
+      :label="`Read more about Unity`"
+    ></IconItem>
+    <IconItem
+      :icon="`devicon-monogame-plain`"
+      :href="`https://monogame.net/`"
+      :label="`Read more about Monogame`"
+    ></IconItem>
+    <IconItem
+      :icon="`devicon-cplusplus-plain`"
+      :href="`https://isocpp.org/`"
+      :label="`Read more about C plus plus`"
+    ></IconItem>
+    <IconItem
+      :icon="`devicon-drupal-plain`"
+      :href="`https://new.drupal.org/home`"
+      :label="`Read more about Drupal`"
     ></IconItem>
   </SectionComponent>
 </template>

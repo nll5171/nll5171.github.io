@@ -10,6 +10,21 @@ import CardItem from './CardItem.vue'
     :id="`web-projects`"
   >
     <CardItem
+      :title="`CPS-3 ROM Conversion Tool Remake`"
+      :year="`Spring 2026`"
+      :img="`cps3-conversion-new.png`"
+      :url="`cps3-conversion-new`"
+    >
+      <p class="card-text">
+        A cross-platform remake of the CPS-3 ROM Conversion Tool I had previously built in Java,
+        designed to convert between the two formats used by emulators.
+      </p>
+      <p class="card-text">
+        Front-end built using React, TailwindCSS, and daisyUI. Originally developed with
+        Neutralino.js before switching to Tauri for better performance.
+      </p>
+    </CardItem>
+    <CardItem
       :title="`EarthCam Laravel Demo`"
       :year="`Winter 2026`"
       :img="`earth-cam-laravel-demo-home.png`"
