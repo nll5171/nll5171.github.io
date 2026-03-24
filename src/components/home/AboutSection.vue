@@ -22,7 +22,6 @@
                     alt="A photo of myself"
                     class="figure-img img-fluid img-thumbnail rounded"
                   />
-                  <figcaption class="figure-caption text-light">Very cool guy.</figcaption>
                 </figure>
               </div>
               <p>
@@ -77,7 +76,6 @@
                   alt="A photo of myself"
                   class="figure-img img-fluid img-thumbnail rounded"
                 />
-                <figcaption class="figure-caption text-light">Very cool guy.</figcaption>
               </figure>
             </div>
           </div>
